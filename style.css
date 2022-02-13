@@ -10,7 +10,7 @@ body {
     padding-bottom: 56.25%;
 }
 
-.video-playback iframe {
+.video-playback video {
     position: absolute;
     top: 0;
     left: 0;
