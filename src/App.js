@@ -1,13 +1,16 @@
-import Button from './components/Buttons';
+import './App.css';
 
 function App() {
   return (
     <div className="shell">
       <div className="name">Nick Wilder</div>
       <div className="btn-container">
-        <Button label="Github" imgPath="../img/github.png"/>
-        <Button label="Email" imgPath="../img/email.png"/>
-        <Button label="LinkedIn" imgPath="../img/linkedin.png"/>
+        <a class="btn" href="https://github.com/NickTheWilder">
+          <img src={require("./img/github.png")} alt="GithHub Logo" />GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/nick-wilder/">
+          <img src={require("./img/linkedin.png")} alt="GithHub Logo" />GitHub
+        </a>
       </div>
     </div>
   );
