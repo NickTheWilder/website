@@ -1,49 +1,12 @@
-import "./App.css";
-import Particles from "react-tsparticles";
-import particlesConfig from "./components/particles-config.js";
-import { loadFull } from "tsparticles";
+import AboutMe from "./components/AboutMe";
+import SplashScreen from "./components/SplashScreen";
 
 function App() {
-    const particlesInit = async (main) => {
-        await loadFull(main, particlesConfig);
-    };
-
-    const particlesLoaded = (main) => {
-        console.log(main);
-    };
-
     return (
-        <div className="App">
-            <Particles
-                init={particlesInit}
-                loaded={particlesLoaded}
-                options={particlesConfig}
-            />
-            <div className="shell">
-                <div className="container">
-                    <div className="name">Nick Wilder&nbsp;</div>
-                </div>
-                <div className="btn-container">
-                    <a class="btn" href="https://github.com/NickTheWilder">
-                        <img
-                            src={require("./img/github.png")}
-                            alt="GithHub Logo"
-                        />
-                        GitHub
-                    </a>
-                    <a
-                        class="btn"
-                        href="https://www.linkedin.com/in/nick-wilder/"
-                    >
-                        <img
-                            src={require("./img/linkedin.png")}
-                            alt="LinkedIn Logo"
-                        />
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
+        <>
+            <SplashScreen />
+            <AboutMe />
+        </>
     );
 }
 

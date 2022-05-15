@@ -1,0 +1,19 @@
+.about-me {
+    background-color: #fff;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 3em;
+    color: #2d2d2d;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
