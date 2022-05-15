@@ -1,7 +1,6 @@
 body {
-  margin: auto;
-  background-color: rgb(105,105,105);
-  color: rgb(255,255,255);
+  margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: #1f2833;
 }
 
