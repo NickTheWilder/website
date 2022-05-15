@@ -20,11 +20,11 @@ const particlesConfig = {
     },
     particles: {
         color: {
-            value: "#ffffff",
+            value: "#8F9399",
         },
         links: {
             color: {
-                value: "#ffffff",
+                value: "#8F9399",
             },
             distance: 150,
             enable: true,
@@ -53,7 +53,7 @@ const particlesConfig = {
             density: {
                 enable: true,
             },
-            value: 60,
+            value: 75,
         },
         opacity: {
             value: 0.5,

@@ -20,7 +20,9 @@ function App() {
                 options={particlesConfig}
             />
             <div className="shell">
-                <div className="name">Nick Wilder</div>
+                <div className="container">
+                    <div className="name">Nick Wilder&nbsp;</div>
+                </div>
                 <div className="btn-container">
                     <a class="btn" href="https://github.com/NickTheWilder">
                         <img
@@ -38,13 +40,6 @@ function App() {
                             alt="LinkedIn Logo"
                         />
                         LinkedIn
-                    </a>
-                    <a class="btn">
-                        <img
-                            src={require("./img/linkedin.png")}
-                            alt="GithHub Logo"
-                        />
-                        GitHub
                     </a>
                 </div>
             </div>
