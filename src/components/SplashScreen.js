@@ -13,8 +13,15 @@ function SplashScreen() {
         console.log(main);
     };
 
+    const scrollToContent = () => {
+        window.scrollTo({
+            top: document.getElementById("content").offsetTop,
+            behavior: "smooth",
+        });
+    }
+
     return (
-        <section className="main">
+        <section id="main">
             <Particles
                 init={particlesInit}
                 loaded={particlesLoaded}
@@ -43,8 +50,13 @@ function SplashScreen() {
                         LinkedIn
                     </a>
                 </div>
-                <div className="view-more">
-                    View More <img src={require("../img/scroll-down.png")} alt="Scroll Down" />
+                <div className="view-more" onClick={scrollToContent}>
+                    View More&nbsp;&nbsp;
+                    <div className="scroll">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </section>

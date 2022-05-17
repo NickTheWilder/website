@@ -1,19 +1,36 @@
-.about-me {
-    background-color: #fff;
-    width: 100%;
+#content {
+    background-color: var(--light-bg);
     z-index: 3;
     position: relative;
-    max-width: 1000px;
     margin: auto;
     padding: 50px;
-    border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.title {
-    font-size: 3em;
-    color: #2d2d2d;
+.nav {
     text-align: center;
-    margin-bottom: 50px;
-    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.nav div {
+    text-decoration: none;
+    color: var(--text-color-secondary);
+    margin: 0  50px 10px 50px;
+    display: inline-block;
+    border-bottom: 2px solid var(--light-bg);
+    cursor: pointer;
+}
+
+.nav div:hover {
+    border-bottom: 2px solid var(--text-color-secondary);
+}
+
+
+.hidden {
+    display: none;
+}
+
+.active {
+    color: var(--text-color-primary) !important;
+    border-bottom: 2px solid var(--text-color-primary) !important;
 }
