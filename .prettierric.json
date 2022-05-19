@@ -1,7 +1,6 @@
 {
   "arrowParens": "avoid",
-  "endOfLine": "auto",
-  "printWidth": 120,
+  "printWidth": 300,
   "quoteProps": "preserve",
   "tabWidth": 4,
   "trailingComma": "none",

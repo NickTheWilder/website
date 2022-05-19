@@ -9,10 +9,6 @@ function SplashScreen() {
         await loadFull(main, particlesConfig);
     };
 
-    const particlesLoaded = (main) => {
-        console.log(main);
-    };
-
     const scrollToContent = () => {
         window.scrollTo({
             top: document.getElementById("content").offsetTop,
@@ -24,7 +20,6 @@ function SplashScreen() {
         <section id="main">
             <Particles
                 init={particlesInit}
-                loaded={particlesLoaded}
                 options={particlesConfig}
             />
             <div className="shell">
