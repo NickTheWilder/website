@@ -27,7 +27,7 @@ function App() {
                     <a class="btn" href="https://github.com/NickTheWilder">
                         <img
                             src={require("./img/github.png")}
-                            alt="GithHub Logo"
+                            alt="GitHub Logo"
                         />
                         GitHub
                     </a>
