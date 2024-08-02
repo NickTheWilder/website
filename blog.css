@@ -1,0 +1,23 @@
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  margin: 0 100px;
+}
+
+a {
+  text-decoration: none !important;
+  color: #00a2d6 !important;
+  cursor: pointer;
+}
+
+.intro {
+  margin-bottom: 75px;
+  margin-top: 25px;
+  font-weight: 500;
+}
+
+.introTitle {
+  color: #00a2d6;
+}

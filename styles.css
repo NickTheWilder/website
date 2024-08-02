@@ -63,7 +63,8 @@ a {
   margin-right: 5px;
 }
 
-.contact::after,
+.blo::after,
+.g::after,
 .github::after,
 .s::after,
 .otif::after,
@@ -77,7 +78,14 @@ a {
   height: 2px;
 }
 
-.contact::after {
+.blo::after {
+  width: 25px;
+  background-color: #ff6b6b;
+}
+
+.g::after {
+  width: 1px;
+  left: 37px;
   background-color: #ff6b6b;
 }
 
