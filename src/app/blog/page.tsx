@@ -8,8 +8,8 @@ export default function Blog(): JSX.Element {
       <h1 className={styles.introTitle}>Blog</h1>
       <div>
         Blog will contain notes from books, courses, and maybe occasional random thoughts. Most of the notes will come
-        from my Obsidian vault served here as a backup using{" "}
-        <Link href="https://markdowntohtml.com/">markdowntohtml.com</Link> with minimal extra formatting.
+        from my Obsidian vault served here as a backup using <Link href="https://mdxjs.com/">https://mdxjs.com/</Link>{" "}
+        with minimal extra formatting.
       </div>
       <br />
       <div>Notes will be added as I think they are relevant and polished enough to publish.</div>
@@ -20,9 +20,6 @@ export default function Blog(): JSX.Element {
         </li>
         <li>
           <Link href="/blog/contract-testing">Contract Testing in Action - 11/02/2024</Link>
-        </li>
-        <li>
-          <Link href="#">Powershell Scripting and Toolmaking - Also maybe soon?</Link>
         </li>
       </ul>
     </div>
