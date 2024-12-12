@@ -16,10 +16,10 @@ export default function Blog(): JSX.Element {
       <h3>Table of Contents</h3>
       <ul>
         <li>
-          <Link href="effective-writing">Becoming an Effective Writer - 06/24/2024</Link>
+          <Link href="/blog/effective-writing">Becoming an Effective Writer - 06/24/2024</Link>
         </li>
         <li>
-          <Link href="#contract-testing">Contract Testing in Action - 11/02/2024</Link>
+          <Link href="/blog/contract-testing">Contract Testing in Action - 11/02/2024</Link>
         </li>
         <li>
           <Link href="#">Powershell Scripting and Toolmaking - Also maybe soon?</Link>
