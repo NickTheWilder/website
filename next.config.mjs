@@ -13,6 +13,11 @@ const nextConfig = {
     return config;
   },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+
+  // Netlify
+  images: {
+    domains: ["https://nickthewilder.online"],
+  },
 };
 
 const withMDX = createMDX({

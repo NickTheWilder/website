@@ -39,7 +39,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# node complaining - not relevant for windows machinespnpm
-**/node_modules/@next/swc-linux*
-**/node_modules/@next/swc-darwin*
-**/node_modules/@next/swc-win32-arm64*
+# node complaining - not relevant for windows machines pnpm
+**/node_modules/@next/swc-!(win32-x64)
