@@ -1,11 +1,11 @@
 "use client";
 import { JSX } from "react";
-import ContractTesting from "./ContractTesting.mdx";
+import AIOverlords from "./AIOverlords.mdx";
 
 export default function Post(): JSX.Element {
   return (
     <article className="mdx-content">
-      <ContractTesting />
+      <AIOverlords />
     </article>
   );
 }

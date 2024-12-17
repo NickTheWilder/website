@@ -1,6 +1,6 @@
 "use client";
 import { JSX } from "react";
-import EffectiveWriting from "@/markdown/EffectiveWriting.mdx";
+import EffectiveWriting from "./EffectiveWriting.mdx";
 
 export default function Post(): JSX.Element {
   return (
