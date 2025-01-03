@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
 
   return (
     <div className={is98 ? styles.win98 : ""}>
-      <div className={`${styles.container} ${is98 ? "window win98" : ""}`}>
+      <div className={`${styles.container} ${is98 ? "window win98 container" : ""}`}>
         {is98 && (
           <div className="title-bar">
             <div className="title-bar-text">Nick Wilder</div>

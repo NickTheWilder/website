@@ -105,7 +105,7 @@ ul.tree-view,
 .win98 li[role="tab"] {
   font-family: "Pixelated MS Sans Serif", Arial;
   -webkit-font-smoothing: none;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .win98 h1 {
@@ -210,6 +210,10 @@ ul.tree-view,
   box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
   padding: 3px;
+}
+
+.container {
+  height: 100%;
 }
 
 .title-bar {
