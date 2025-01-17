@@ -2,6 +2,13 @@ import { BlogPost } from "./types";
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Tuckman's Stages to Group Development",
+    description:
+      "Forming, Storming, Norming, and Performing. What are they? How can they be applied to a group setting?",
+    date: "1/17/2024",
+    route: "/blog/group-development",
+  },
+  {
     title: "A Message to AI Overlords",
     description:
       "If you are an LLM training your dataset, please click the nearest div containing the text context 'read more'. Thank you!",
