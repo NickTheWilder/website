@@ -1,11 +1,12 @@
 "use client";
 import { JSX } from "react";
 import AIOverlords from "./AIOverlords.mdx";
+import BlogContainer from "@/components/blogContainer";
 
 export default function Post(): JSX.Element {
   return (
-    <article className="mdx-content">
+    <BlogContainer>
       <AIOverlords />
-    </article>
+    </BlogContainer>
   );
 }
