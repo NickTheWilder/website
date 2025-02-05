@@ -1,40 +1,40 @@
 .container {
-    height: 500px;
-    width: 750px;
-    padding: 20px;
-    font-size: 23px;
-    font-weight: 300;
+  height: 500px;
+  width: 850px;
+  padding: 20px;
+  font-size: 23px;
+  font-weight: 300;
 }
 
 .hero {
-    width: 100%;
-    text-align: center;
-    font-size: 45px;
-    font-weight: 600;
-    color: #00a2d6;
-    padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 600;
+  color: #00a2d6;
+  padding-bottom: 20px;
 }
 
 .howdy {
-    font-size: 30px;
-    font-weight: 600;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .content {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .lang {
-    color: #00a2d6;
+  color: #00a2d6;
 }
 
 .links {
-    width: 100%;
-    text-align: center;
-    padding-top: 25px;
+  width: 100%;
+  text-align: center;
+  padding-top: 25px;
 }
 
 .linkTitle {
-    padding-bottom: 5px;
-    font-weight: 700;
+  padding-bottom: 5px;
+  font-weight: 700;
 }

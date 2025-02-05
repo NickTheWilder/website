@@ -1,7 +1,6 @@
 "use client";
 import { JSX } from "react";
 import EffectiveWriting from "./EffectiveWriting.mdx";
-import Header from "@/components/header";
 import BlogContainer from "@/components/blogContainer";
 
 export default function Post(): JSX.Element {
