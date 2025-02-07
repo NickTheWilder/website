@@ -5,7 +5,7 @@ export const blogPosts: BlogPost[] = [
     title: "Your Code Review Gospel",
     description:
       "It's time to create good PRs and give good reviews. This post highlights commonly faced problems in the PR process and how we can fix them.",
-    date: "01/17/2024",
+    date: "02/07/2024",
     route: "/blog/review-gospel",
   },
   {
