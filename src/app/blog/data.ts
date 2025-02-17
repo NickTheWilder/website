@@ -2,6 +2,13 @@ import { BlogPost } from "./types";
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Current Homelab Setup",
+    description:
+      "I've come to a checkpoint of my homelab. Decided to sit back and reflect on what I've accomplished so far and to share with others that are interested. I plan on updating this when significant changes are made to keep as a log.",
+    date: "02/17/2025",
+    route: "/blog/homelab-setup",
+  },
+  {
     title: "Your Code Review Gospel",
     description:
       "It's time to create good PRs and give good reviews. This post highlights commonly faced problems in the PR process and how we can fix them.",
