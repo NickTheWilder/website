@@ -15,8 +15,6 @@ Running on a [ZimaBlade 7700](https://shop.zimaspace.com/products/zimablade-sing
 - PCIe 2.0 x4 slot for future expansion
 - Extended with a 500 Gb Samsung SSD
 
-The system runs smooth with passive cooling, consuming only about 52.56 kWh/year at full load - perfect for 24/7 operation.
-
 ## Software Stack
 
 ### Base System
@@ -29,7 +27,7 @@ The system runs smooth with passive cooling, consuming only about 52.56 kWh/year
 
 ## Portainer
 
-CasaOS is already largely container based, so technically I could use the app store that is already provided. But Portainer just makes everything so much easier when managing containers, so use Portrainer for everything container related.
+CasaOS is already largely container based, so technically I could use the app store that is already provided. But Portainer just makes everything so much easier when managing containers.
 
 Running Portainer through CasaOS has become the backbone of my container management strategy. It provides a sleek web interface that makes managing Docker containers straightforward while still giving me the deep control I need. Through Portainer, I maintain my containers along with other homelab services.
 
@@ -53,16 +51,16 @@ Home Assistant has become the main feature of my server now. Currently only util
 
 I was lucky enough to stumble upon [this YouTube video](https://www.youtube.com/watch?v=RwZmQ7QfhsM) to setup my thermostat. I don't think this would've been that smooth of a process without finding this.
 
-I am planning on eventually wiring PoE cameras throughout my house for security and to be out of the loop of hosting cameras over WiFi or over the web with some other company. The idea is to incrementally, starting with basic PoE switch and Reolink camera infrastructure, with room to grow into more advanced networking features if needed.
+I am planning on eventually wiring PoE cameras throughout my house for security and to be out of the loop of hosting cameras over WiFi or over the web with some other company. The idea is to start incrementally with a basic PoE switch and Reolink camera infrastructure, with room to grow into more advanced networking features if needed.
 
 #### Uptime Kuma
 
 Uptime Kuma serves as my primary monitoring solution for all the services running on my ZimaBlade. Running as a Docker container managed through Portainer, it provides real-time status monitoring of my Pi-hole DNS service, CasaOS interface, and other critical network components.
 
-Currently tracking all containers mentioned above, this website's status, and my Nest's integration with Home Assistant since it has been flaky. Admittedly monitoring the containers is redundant, they are only likely to go down if the whole server is offline, but it was at least fun to setup.
+Currently tracking all containers mentioned above, this website's status, and my Nest's integration with Home Assistant since it has been flaky. Admittedly monitoring the containers is redundant, they are only likely to go down if the whole server is offline, but it was at least fun to set up.
 
 #### WireGaurd
 
 Without connecting to WiFi, I had no way to control my thermostat. Eventually this would also be a point of failure to track my cameras that will be setup as well if I am not home. WireGaurd to the rescue.
 
-Current I've configured remote access to my homelab while keeping regular internet traffic separate through split tunneling. After configuring port forwarding on my AT&T router and deploying the WireGuard container, I can now securely access all my home services from anywhere without routing all my mobile traffic through my home network. WireGuard's strong encryption and key-based authentication ensure only authorized devices can connect, making it a robust yet simple solution for remote homelab access.
+Currently I've configured remote access to my homelab while keeping regular internet traffic separate through split tunneling. After configuring port forwarding on my AT&T router and deploying the WireGuard container, I can now securely access all my home services from anywhere without routing all my mobile traffic through my home network. WireGuard's strong encryption and key-based authentication ensure only authorized devices can connect, making it a robust yet simple solution for remote homelab access.
