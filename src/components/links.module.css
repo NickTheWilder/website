@@ -1,10 +1,10 @@
 .link {
-  font-size: 18px;
-  cursor: pointer;
-  position: relative;
-  text-decoration: none;
-  margin-right: 10px;
-  line-height: normal;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    margin-right: 10px;
+    line-height: normal;
 }
 
 .blo::after,
@@ -14,44 +14,44 @@
 .otif::after,
 .y::after,
 .linkedIn::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -0.33px;
-  width: 102%;
-  height: 2px;
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -0.33px;
+    width: 102%;
+    height: 2px;
 }
 
 .blo::after {
-  width: 25px;
-  background-color: #ff6b6b;
+    width: 25px;
+    background-color: #ff6b6b;
 }
 
 .g::after {
-  width: 1px;
-  left: 37px;
-  background-color: #ff6b6b;
+    width: 1px;
+    left: 37px;
+    background-color: #ff6b6b;
 }
 
 .github::after {
-  background-color: #71f27e;
+    background-color: #71f27e;
 }
 
 .s::after {
-  width: 10px;
-  background-color: #f3ee77;
+    width: 10px;
+    background-color: #f3ee77;
 }
 .otif::after {
-  left: 17px;
-  width: 30px;
-  background-color: #f3ee77;
+    left: 17px;
+    width: 30px;
+    background-color: #f3ee77;
 }
 .y::after {
-  left: 57px;
-  width: 3px;
-  background-color: #f3ee77;
+    left: 57px;
+    width: 3px;
+    background-color: #f3ee77;
 }
 
 .linkedIn::after {
-  background-color: #00a2d6;
+    background-color: #00a2d6;
 }

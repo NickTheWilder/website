@@ -1,23 +1,23 @@
 .header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  line-height: normal;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    line-height: normal;
 }
 
 .name {
-  margin-right: 10px;
-  font-size: 18px;
-  position: relative;
+    margin-right: 10px;
+    font-size: 18px;
+    position: relative;
 }
 
 .name::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -0.33px;
-  height: 2px;
-  width: 50px;
-  background-color: #9370db;
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -0.33px;
+    height: 2px;
+    width: 50px;
+    background-color: #9370db;
 }
