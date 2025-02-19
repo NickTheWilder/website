@@ -39,8 +39,13 @@
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
     .blogContainer {
         min-height: 150px;
+    }
+    .blogDescription {
+        max-height: 125px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

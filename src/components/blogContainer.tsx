@@ -9,9 +9,7 @@ interface BlogProps {
 export default function BlogContainer(props: BlogProps): JSX.Element {
     return (
         <div style={{ display: "block" }}>
-            <div style={{ width: "100%", display: "block", marginTop: "15px" }}>
-                <Header />
-            </div>
+            <Header />
             <article className="mdx-content">{props.children}</article>
         </div>
     );

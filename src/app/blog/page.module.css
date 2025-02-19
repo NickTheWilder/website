@@ -17,6 +17,12 @@
     padding: 0;
 }
 
+@media (max-width: 1024px) {
+    .intro {
+        margin: 0 1rem 0 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .blogGrid {
         grid-template-columns: 1fr;
