@@ -5,6 +5,11 @@
     max-width: 65.75rem;
 }
 
+.link {
+    color: var(--primary-blue);
+    font-style: italic;
+}
+
 .introTitle {
     color: var(--primary-blue);
     padding: 20px 0 10px;

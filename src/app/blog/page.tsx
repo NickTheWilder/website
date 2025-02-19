@@ -15,7 +15,9 @@ export default function Blog(): JSX.Element {
                     Blog will contain notes from books, courses, and maybe
                     occasional random thoughts. Most of the notes will come from
                     my Obsidian vault served here as a backup using{" "}
-                    <Link href="https://mdxjs.com/">https://mdxjs.com/</Link>{" "}
+                    <Link className={styles.link} href="https://mdxjs.com/">
+                        https://mdxjs.com/
+                    </Link>{" "}
                     with minimal extra formatting.
                 </p>
                 <br />

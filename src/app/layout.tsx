@@ -3,6 +3,7 @@ import { JSX } from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CONSOLE_ART, consoleArtStyle } from "./consoleArt";
 
 export const metadata: Metadata = {
     title: "Nick Wilder",
@@ -36,6 +37,7 @@ export default function RootLayout({
                         gtag('config', 'G-130R11B1E9D');
                     `}
                 </Script>
+                <Script>{`console.log('%c'+\`${CONSOLE_ART}\`, '${consoleArtStyle}')`}</Script>
             </head>
             <body>{children}</body>
         </html>
