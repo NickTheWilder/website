@@ -25,18 +25,15 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
                 {/* Google Analytics */}
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-130R11B1E9D"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-130R11B1E9D');
-                    `}
-                </Script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-130R11B1E9"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'G-130R11B1E9');
+                </script>
+
                 <Script>{`console.log('%c'+\`${CONSOLE_ART}\`, '${consoleArtStyle}')`}</Script>
             </head>
             <body>{children}</body>
