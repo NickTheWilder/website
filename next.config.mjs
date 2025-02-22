@@ -7,7 +7,7 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
-    domains: ["nickthewilder.online"], // note: removed https:// as domains should be without protocol
+    domains: ["nickthewilder.com"],
   },
 };
 
