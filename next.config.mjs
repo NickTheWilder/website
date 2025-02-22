@@ -5,20 +5,9 @@ import rehypeHighlight from "rehype-highlight";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     productionBrowserSourceMaps: false,
-    webpack: (config) => {
-        config.snapshot = {
-            ...(config.snapshot || {}),
-            managedPaths: [
-                /^(.+?[**\\**/]node_modules[**\\**/])(?!@img[**\\**/])/,
-            ],
-        };
-        return config;
-    },
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-
-    // Netlify
     images: {
-        domains: ["https://nickthewilder.online"],
+        domains: ["nickthewilder.com"],
     },
 };
 

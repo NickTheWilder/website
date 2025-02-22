@@ -1,0 +1,9 @@
+# blog files
+*.mdx
+
+# config
+*.toml
+*.yaml
+
+# README
+*.md

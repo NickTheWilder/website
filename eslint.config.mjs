@@ -19,14 +19,7 @@ const gitignorePath = path.resolve(__dirname, ".gitignore");
 
 export default [
     includeIgnoreFile(gitignorePath),
-    ...compat.extends(
-        "next/core-web-vitals",
-        "next/typescript",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "plugin:jsx-a11y/recommended",
-    ),
+    ...compat.extends("next/core-web-vitals", "next/typescript", "eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"),
     {
         plugins: {
             "@typescript-eslint": typescriptEslint,

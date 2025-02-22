@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     },
 };
 
+declare global {
+    interface Window {
+        dataLayer: any[];
+    }
+}
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -25,18 +31,16 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
                 {/* Google Analytics */}
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-130R11B1E9D"
-                    strategy="afterInteractive"
-                />
+                <Script async src="https://www.googletagmanager.com/gtag/js?id=G-130R11B1E9" />
                 <Script id="google-analytics" strategy="afterInteractive">
                     {`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
-                        gtag('config', 'G-130R11B1E9D');
+                        gtag('config', 'G-130R11B1E9');
                     `}
                 </Script>
+
                 <Script>{`console.log('%c'+\`${CONSOLE_ART}\`, '${consoleArtStyle}')`}</Script>
             </head>
             <body>{children}</body>
