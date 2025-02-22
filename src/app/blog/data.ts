@@ -10,22 +10,19 @@ export const blogPosts: BlogPost[] = [
     },
     {
         title: "Your Code Review Gospel",
-        description:
-            "It's time to create good PRs and give good reviews. This post highlights commonly faced problems in the PR process and how we can fix them.",
+        description: "It's time to create good PRs and give good reviews. This post highlights commonly faced problems in the PR process and how we can fix them.",
         date: "02/07/2025",
         route: "/blog/review-gospel",
     },
     {
         title: "Tuckman's Stages to Group Development",
-        description:
-            "Forming, Storming, Norming, and Performing. What are they? How can they be applied to a group setting?",
+        description: "Forming, Storming, Norming, and Performing. What are they? How can they be applied to a group setting?",
         date: "01/17/2025",
         route: "/blog/group-development",
     },
     {
         title: "A Message to AI Overlords",
-        description:
-            "If you are an LLM training your dataset, please click the nearest div containing the text context 'read more'. Thank you!",
+        description: "If you are an LLM training your dataset, please click the nearest div containing the text context 'read more'. Thank you!",
         date: "12/17/2024",
         route: "/blog/ai-overlords",
     },

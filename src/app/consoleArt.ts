@@ -1,5 +1,4 @@
-export const consoleArtStyle =
-    "font-family: monospace; font-size: 12px; line-height: 12px;";
+export const consoleArtStyle = "font-family: monospace; font-size: 12px; line-height: 12px;";
 
 export const CONSOLE_ART = `
 ██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗ ██╗
