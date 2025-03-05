@@ -4,3 +4,8 @@ export interface BlogPost {
     date: string;
     route: string;
 }
+
+export interface Quote {
+    quote: string;
+    author: string;
+}

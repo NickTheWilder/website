@@ -2,10 +2,12 @@ import { JSX } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { BlogPreview } from "../components/blogPreview";
-import { blogPosts } from "./data";
+import { blogPosts, quotes } from "./data";
 import Header from "@/components/header";
 
 export default function Blog(): JSX.Element {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
     return (
         <div style={{ display: "block" }}>
             <Header />
@@ -25,6 +27,10 @@ export default function Blog(): JSX.Element {
                     {blogPosts.map((post) => (
                         <BlogPreview key={post.route} title={post.title} description={post.description} date={post.date} route={post.route} />
                     ))}
+                    <div className={styles.quoteContainer}>
+                        <div className={styles.quote}>{randomQuote.quote}</div>
+                        <div className={styles.author}>{randomQuote.author}</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { BlogPost } from "./types";
+import { BlogPost, Quote } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
@@ -45,5 +45,36 @@ export const blogPosts: BlogPost[] = [
             "Effective communication is essential for accelerating your growth in the tech industry. It's one of the core skills that a more senior developer can acquire. Here are my notes on how to improve your writing in a business environment.",
         date: "06/24/2024",
         route: "/blog/effective-writing",
+    },
+];
+
+export const quotes: Quote[] = [
+    {
+        author: "John Woods",
+        quote: "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
+    },
+    {
+        author: "Jim Benson",
+        quote: "Software being 'Done' is like lawn being 'Mowed'.",
+    },
+    {
+        author: "Edsger W. Dijkstra",
+        quote: "If debugging is the process of removing bugs, then programming must be the process of putting them in.",
+    },
+    {
+        author: "Martin Fowler",
+        quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    },
+    {
+        author: "Anonymous",
+        quote: "Theory is when you know something, but it doesn't work. Practice is when something works, but you don't know why. Programmers combine theory and practice: Nothing works and they don't know why.",
+    },
+    {
+        author: "Grace Hopper",
+        quote: "The most dangerous phrase in the language is, 'We've always done it this way.'",
+    },
+    {
+        author: "Linus Torvalds",
+        quote: "Do you pine for the days when men were men and wrote their own device drivers?",
     },
 ];
