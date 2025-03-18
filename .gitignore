@@ -1,7 +1,8 @@
-# dependencies
+# dependencies & logs
 /node_modules
-/.pnp
-.pnp.*
+logs
+*.log
+
 
 # testing
 /coverage
