@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 declare global {
     interface Window {
-        dataLayer: any[];
+        dataLayer: never[];
     }
 }
 
@@ -41,7 +41,7 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                <Script>{`console.log('%c'+\`${CONSOLE_ART}\`, '${consoleArtStyle}')`}</Script>
+                <Script id="console-art">{`console.log('%c'+\`${CONSOLE_ART}\`, '${consoleArtStyle}')`}</Script>
             </head>
             <body>{children}</body>
         </html>
