@@ -2,6 +2,12 @@ import { BlogPost } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "The 6 Month Rule",
+        description: "Every 6 months you should be incomparable to youself from the previous interaction. A blurb of thoughts on how I apply this in my life.",
+        date: "03/30/2025",
+        route: "/blog/six-month-rule",
+    },
+    {
         title: "Current Homelab Setup",
         description:
             "I've come to a checkpoint of my homelab. Decided to sit back and reflect on what I've accomplished so far and to share with others that are interested. I plan on updating this when significant changes are made to keep as a log.",
