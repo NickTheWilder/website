@@ -10,18 +10,26 @@
     font-style: italic;
 }
 
-.introTitle {
+.title {
     color: var(--primary-blue);
     padding: 20px 0 10px;
 }
 
 .blogGrid {
-    padding: 0;
+    width: 60%;
+    padding-right: 1.5rem;
 }
 
-.quoteContainer {
-    float: right;
-    width: 39%;
+.author {
+    padding-left: 20px;
+}
+
+.blogContainer {
+    display: flex;
+}
+
+.sidebar {
+    width: 40%;
 }
 
 @media (max-width: 1024px) {
