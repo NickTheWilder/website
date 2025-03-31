@@ -3,7 +3,7 @@ import { BlogPost } from "./types";
 export const blogPosts: BlogPost[] = [
     {
         title: "The 6 Month Rule",
-        description: "Every 6 months you should be incomparable to youself from the previous interaction. A blurb of thoughts on how I apply this in my life.",
+        description: "Every 6 months you should be incomparable to yourself from the previous iteration. A blurb of thoughts on how I apply this in my life.",
         date: "03/30/2025",
         route: "/blog/six-month-rule",
     },
