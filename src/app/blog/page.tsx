@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BlogPreview } from "../components/blogPreview";
 import { blogPosts, quotes } from "./data";
 import Header from "@/components/header";
-import { TagsList } from "../components/TagsList";
+import { TagsList } from "../components/tagsList";
 import { Quote, Tags } from "./types";
 
 export default function Blog(): JSX.Element {
@@ -53,7 +53,6 @@ export default function Blog(): JSX.Element {
                         <div className={styles.quotes}>
                             {quote !== null && (
                                 <>
-                                    <h2 className={styles.title}>Random Quote</h2>
                                     <i className={styles.quote}>{quote?.quote}</i>
                                     <div className={styles.author}> - {quote?.author}</div>
                                 </>
