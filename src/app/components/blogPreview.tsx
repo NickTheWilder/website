@@ -11,15 +11,12 @@ interface BlogProps {
 
 export function BlogPreview(props: BlogProps): JSX.Element {
     return (
-        <div className={styles.blogContainer}>
-            <h3 className={styles.blogTitle}>{props.title}</h3>
-            <p className={styles.blogDescription}>{props.description}</p>
-            <div className={styles.blogFooter}>
-                <time className={styles.blogDate}>{props.date}</time>
-                <Link className={styles.blogLink} href={props.route}>
-                    Read more
-                </Link>
-            </div>
+        <div className={styles.postContainer}>
+            <h2 className={styles.title}>{props.title}</h2>
+            <p className={styles.description}>{props.description}</p>
+            <Link className={styles.link} href={props.route}>
+                Read more -&gt;
+            </Link>
         </div>
     );
 }

@@ -6,7 +6,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     font-family: "Inter", sans-serif;
     background-color: #1e1e1e;
     color: #fff;
@@ -76,11 +75,12 @@ h6 {
 
 .mdx-content {
     max-width: 65.75rem;
+    margin-bottom: 4rem;
 }
 
 @media (max-width: 1024px) {
     .mdx-content {
-        margin: 0 1rem 0 1rem;
+        margin: 0 1rem 4rem 1rem;
     }
 }
 
