@@ -21,13 +21,13 @@ Apart from detecting bugs missed by proper communication amongst teams, here are
 
 ## Contracts on the Consumer Side
 
-Usually the contract is driven from the consumer of the API. Usually the consumer will receive business requirements for an application, thus they will create a contract for what fields that they will need.
+Usually the contract is driven from the consumer of the API. Usually the consumer will receive business requirements for an application, so they will create a contract for what fields that they will need.
 
 The frontend engineer will
 
 - Define the interaction with a mock provider.
 - Runs the test against the mock provider and verifies the request is registered as an interaction.
-- If tests are successful, the contract will be generated automatically with includes the defined interaction. The frontend engineer will then upload the contract to a shared repository.
+- If tests are successful, the contract will be generated automatically which includes the defined interaction. The frontend engineer will then upload the contract to a shared repository.
 
 ## Contracts on the Provider Side
 
@@ -185,14 +185,14 @@ A provider contract test can be broken down into 5 steps
 4. Writing the provider contract test.
 5. Running the provider contract test.
 
-```Js
+```js
 const { Verifier } = require('@pact-foundation/pact');
 const { importData, server } = require('./provider');
 
 importData();
 
 const port = '3001';
-const app = server.listen(port, => console.log(`Listening on port ${port}...`));
+const app = server.listen(port, () => console.log(`Listening on port ${port}...`));
 
 const options = {
   provider: 'MoviesAPI',
