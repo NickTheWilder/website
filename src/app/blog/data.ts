@@ -2,6 +2,13 @@ import { BlogPost, Quote, Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Scoop Everything",
+        description: "Confessing my new love for utilizing a good command line installer.",
+        date: "08/18/2025",
+        route: "/blog/scoop-everything",
+        tags: [Tags.PERSONAL],
+    },
+    {
         title: "The 6 Month Rule",
         description: "Every 6 months you should be incomparable to yourself from the previous iteration. A blurb of thoughts on how I apply this in my life.",
         date: "03/30/2025",
