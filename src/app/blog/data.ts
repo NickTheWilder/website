@@ -2,6 +2,13 @@ import { BlogPost, Quote, Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "2025 is (my) year of Linux desktop",
+        description: "Weeeeeeee down the rabbit hole we go.",
+        date: "08/18/2025",
+        route: "/blog/the-year-of-linux",
+        tags: [Tags.PERSONAL, Tags.TECHNOLOGY],
+    },
+    {
         title: "Scoop Everything",
         description: "Confessing my new love for utilizing a good command line installer.",
         date: "08/18/2025",
