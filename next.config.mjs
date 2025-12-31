@@ -7,16 +7,18 @@ const nextConfig = {
     productionBrowserSourceMaps: false,
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     images: {
-        domains: ["nickthewilder.com"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "nickthewilder.com",
+            },
+        ],
     },
 };
 
 const withMDX = createMDX({
-    options: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeHighlight],
-        jsx: true,
-    },
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
 });
 
 export default withMDX(nextConfig);
