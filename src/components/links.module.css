@@ -13,7 +13,8 @@
 .s::after,
 .otif::after,
 .y::after,
-.linkedIn::after {
+.linkedIn::after,
+.books::after {
     content: "";
     position: absolute;
     left: 0px;
@@ -31,6 +32,10 @@
     width: 1px;
     left: 37px;
     background-color: #ff6b6b;
+}
+
+.books::after {
+    background-color: #9966cc;
 }
 
 .github::after {

@@ -1,0 +1,64 @@
+.container {
+    max-width: 65.75rem;
+    margin-top: 10px;
+}
+
+.title {
+    color: var(--primary-blue);
+    padding: 20px 0 10px;
+}
+
+.intro {
+    margin-bottom: 2rem;
+}
+
+.yearSection {
+    margin-bottom: 2rem;
+}
+
+.year {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.bookList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bookItem {
+    padding: 0.4rem 0;
+    line-height: 1.5;
+}
+
+.bookLink {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.bookLink:hover {
+    text-decoration: underline;
+}
+
+.bookTitle {
+    font-weight: 500;
+}
+
+.author {
+    color: var(--text-secondary, #666);
+}
+
+.isbn {
+    font-style: italic;
+    color: var(--text-secondary, #666);
+    padding-left: 2rem;
+    font-size: 0.9em;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin: 0 1rem;
+    }
+}
