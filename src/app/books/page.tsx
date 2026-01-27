@@ -44,6 +44,7 @@ const booksByYear: BooksByYear[] = [
             { title: "The Art of Peace", author: "Morihei Ueshiba" },
             { title: "Deep Work", author: "Cal Newport", isbn: "978-0349413686", url: "https://www.goodreads.com/book/show/25744928-deep-work" },
             { title: "Dante's Inferno", author: "Dante Alighieri" },
+            { title: "Tidy First?: A Personal Exercise in Empirical Software Design", author: "Kent Beck", url: "https://www.goodreads.com/book/show/171691901-tidy-first", isbn: "978-1098151249" },
         ],
     },
     {
@@ -53,7 +54,7 @@ const booksByYear: BooksByYear[] = [
             { title: "Building a Storybrand", author: "Donald Miller" },
             { title: "simplicity: sustainable, humane, and effective software development ", author: "Dave Thomas", isbn: "979-8888651544", url: "https://www.goodreads.com/book/show/229268652-simplicity" },
             { title: "Contract Testing in Action", author: "Marie Crus and Lewis Prescott", url: "/blog/contract-testing" },
-            { title: "No Hello", author: "notjosh", url: "https://nohello.net/en/" },
+            { title: "No Hello", author: "@notjosh", url: "https://nohello.net/en/" },
             { title: "Limitless", author: "Jim Kwik" },
             { title: "Upstream", author: "Dan Heath" },
         ],
@@ -65,7 +66,7 @@ export default function Books(): JSX.Element {
         <div style={{ display: "block" }}>
             <Header />
             <main className={styles.container}>
-                <h1 className={styles.title}>books, good reads, interesting articles</h1>
+                <h1 className={styles.title}>books, good articles, interesting podcasts</h1>
                 {booksByYear.map(({ year, books }) => (
                     <section key={year} className={styles.yearSection}>
                         <h2 className={styles.year}>{year}</h2>
