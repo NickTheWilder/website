@@ -1,5 +1,5 @@
 "use client";
-import { JSX } from "react";
+import type { JSX } from "react";
 import ReviewGospel from "./ReviewGospel.mdx";
 import BlogContainer from "@/components/blogContainer";
 

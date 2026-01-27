@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import type { JSX } from "react";
 import styles from "./page.module.css";
 import Links from "@/components/links";
 

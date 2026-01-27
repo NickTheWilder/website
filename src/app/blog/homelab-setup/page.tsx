@@ -1,5 +1,5 @@
 "use client";
-import { JSX } from "react";
+import type { JSX } from "react";
 import HomelabSetup from "./HomelabSetup.mdx";
 import BlogContainer from "@/components/blogContainer";
 

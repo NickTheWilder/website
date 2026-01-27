@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import { JSX } from "react";
+import type { JSX } from "react";
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";

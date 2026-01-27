@@ -1,19 +1,21 @@
 "use client";
-import { JSX, useEffect, useState } from "react";
+import type { JSX } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { BlogPreview } from "../components/blogPreview";
 import { blogPosts, quotes } from "./data";
 import Header from "@/components/header";
 import { TagsList } from "../components/tagsList";
-import { Quote, Tags } from "./types";
+import type { Quote, Tags } from "./types";
 
 export default function Blog(): JSX.Element {
     const [quote, setQuote] = useState<Quote | null>(null);
 
     useEffect(() => {
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        setQuote(randomQuote);
+        // Random quote selected client-side to avoid hydration mismatch
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
     }, []);
 
     const [activeTag, setActiveTag] = useState<Tags | null>(null);

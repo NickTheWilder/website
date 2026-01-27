@@ -1,4 +1,5 @@
-import { BlogPost, Quote, Tags } from "./types";
+import type { BlogPost, Quote} from "./types";
+import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {

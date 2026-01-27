@@ -1,4 +1,4 @@
-import { JSX, ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 import Header from "./header";
 import "../markdown-styles/github-dark.css";
 

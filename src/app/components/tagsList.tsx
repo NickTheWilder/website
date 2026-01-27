@@ -1,6 +1,6 @@
-import { JSX } from "react";
+import type { JSX } from "react";
 import { blogPosts } from "../blog/data";
-import { Tags } from "../blog/types";
+import type { Tags } from "../blog/types";
 import styles from "./tagsList.module.css";
 
 function getTagCounts(): { tag: Tags; count: number }[] {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { JSX } from "react";
+import type { JSX } from "react";
 import styles from "./links.module.css";
 
 export default function Links(): JSX.Element {

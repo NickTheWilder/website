@@ -1,5 +1,5 @@
 "use client";
-import { JSX } from "react";
+import type { JSX } from "react";
 import GroupDevelopment from "./GroupDevelopment.mdx";
 import BlogContainer from "@/components/blogContainer";
 

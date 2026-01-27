@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { JSX } from "react";
+import type { JSX } from "react";
 import styles from "./header.module.css";
 import Links from "./links";
 
