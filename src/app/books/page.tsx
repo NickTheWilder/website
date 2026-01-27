@@ -18,11 +18,12 @@ const booksByYear: BooksByYear[] = [
     {
         year: 2026,
         books: [
-            { title: "How to Win Friends & Influence People", author: "Dale Carnegie" },
+            { title: "How to Win Friends & Influence People", author: "Dale Carnegie", url: "https://www.goodreads.com/book/show/4865.How_to_Win_Friends_Influence_People" },
             {
                 title: "Could, Should, Might, Don't: How We Think About The Future",
                 author: "Nick Foster",
                 isbn: "978-0374619350",
+                url: "https://www.goodreads.com/book/show/217387801-could-should-might-don-t",
             },
 
             {
@@ -34,14 +35,14 @@ const booksByYear: BooksByYear[] = [
     {
         year: 2025,
         books: [
-            { title: "Slow Productivity", author: "Cal Newport", isbn: "978-0593544853" },
+            { title: "Slow Productivity", author: "Cal Newport", isbn: "978-0593544853", url: "https://www.goodreads.com/book/show/197773418-slow-productivity" },
             { title: "Learning Patterns", author: "Lydia Hallie, Addy Osmani" },
             { title: "The Pragmatic Programmer", author: "David Thomas & Andrew Hunt" },
             { title: "Say No by Default", author: "37signals", url: "https://37signals.com/podcast/say-no-by-default/" },
-            { title: "The Art of Leadership", author: "Michael Lopp" },
+            { title: "The Art of Leadership", author: "Michael Lopp", url: "https://www.goodreads.com/book/show/50083106-the-art-of-leadership" },
             { title: "The Software Developer's Career Handbook", author: "Michael Lopp" },
             { title: "The Art of Peace", author: "Morihei Ueshiba" },
-            { title: "Deep Work", author: "Cal Newport", isbn: "978-0349413686" },
+            { title: "Deep Work", author: "Cal Newport", isbn: "978-0349413686", url: "https://www.goodreads.com/book/show/25744928-deep-work" },
             { title: "Dante's Inferno", author: "Dante Alighieri" },
         ],
     },
@@ -50,7 +51,7 @@ const booksByYear: BooksByYear[] = [
         books: [
             { title: "Philosophy, Social Theory, and The Thought of George Herbet Mead", author: " Mitchell Aboulafia" },
             { title: "Building a Storybrand", author: "Donald Miller" },
-            { title: "simplicity: sustainable, humane, and effective software development ", author: "Dave Thomas", isbn: "979-8888651544" },
+            { title: "simplicity: sustainable, humane, and effective software development ", author: "Dave Thomas", isbn: "979-8888651544", url: "https://www.goodreads.com/book/show/229268652-simplicity" },
             { title: "Contract Testing in Action", author: "Marie Crus and Lewis Prescott", url: "/blog/contract-testing" },
             { title: "No Hello", author: "notjosh", url: "https://nohello.net/en/" },
             { title: "Limitless", author: "Jim Kwik" },
