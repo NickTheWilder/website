@@ -35,6 +35,7 @@ const booksByYear: BooksByYear[] = [
     {
         year: 2025,
         books: [
+            { title: "Backing up Spotify", author: "annas archive", url: "https://annas-archive.li/blog/backing-up-spotify.html" },
             { title: "Slow Productivity", author: "Cal Newport", isbn: "978-0593544853", url: "https://www.goodreads.com/book/show/197773418-slow-productivity" },
             { title: "Learning Patterns", author: "Lydia Hallie, Addy Osmani" },
             { title: "The Pragmatic Programmer", author: "David Thomas & Andrew Hunt" },
