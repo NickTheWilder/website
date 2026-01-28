@@ -42,7 +42,7 @@ const booksByYear: BooksByYear[] = [
             { title: "The Art of Leadership", author: "Michael Lopp", url: "https://www.goodreads.com/book/show/50083106-the-art-of-leadership" },
             { title: "The Software Developer's Career Handbook", author: "Michael Lopp" },
             { title: "The Art of Peace", author: "Morihei Ueshiba" },
-            { title: "Deep Work", author: "Cal Newport", isbn: "978-0349413686", url: "https://www.goodreads.com/book/show/25744928-deep-work" },
+            { title: "Deep Work", author: "Cal Newport", isbn: "978-1455586691", url: "https://www.goodreads.com/book/show/25744928-deep-work" },
             { title: "Dante's Inferno", author: "Dante Alighieri" },
             { title: "Tidy First?: A Personal Exercise in Empirical Software Design", author: "Kent Beck", url: "https://www.goodreads.com/book/show/171691901-tidy-first", isbn: "978-1098151249" },
         ],
@@ -52,7 +52,7 @@ const booksByYear: BooksByYear[] = [
         books: [
             { title: "Philosophy, Social Theory, and The Thought of George Herbet Mead", author: " Mitchell Aboulafia" },
             { title: "Building a Storybrand", author: "Donald Miller" },
-            { title: "simplicity: sustainable, humane, and effective software development ", author: "Dave Thomas", isbn: "979-8888651544", url: "https://www.goodreads.com/book/show/229268652-simplicity" },
+            { title: "simplicity: sustainable, humane, and effective software development", author: "Dave Thomas", isbn: "979-8888651544", url: "https://www.goodreads.com/book/show/229268652-simplicity" },
             { title: "Contract Testing in Action", author: "Marie Crus and Lewis Prescott", url: "/blog/contract-testing" },
             { title: "No Hello", author: "@notjosh", url: "https://nohello.net/en/" },
             { title: "Limitless", author: "Jim Kwik" },
