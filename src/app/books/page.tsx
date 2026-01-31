@@ -18,6 +18,7 @@ const booksByYear: BooksByYear[] = [
     {
         year: 2026,
         books: [
+            { title: "Red Rising", author: "Pierce Brown", url: "https://www.goodreads.com/book/show/15839976-red-rising", isbn: "978-0345539786" },
             { title: "How to Win Friends & Influence People", author: "Dale Carnegie", url: "https://www.goodreads.com/book/show/4865.How_to_Win_Friends_Influence_People" },
             {
                 title: "Could, Should, Might, Don't: How We Think About The Future",
