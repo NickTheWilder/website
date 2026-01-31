@@ -87,7 +87,6 @@ h6 {
 
 .mdx-content a {
     color: var(--primary-blue);
-    font-style: italic;
 }
 
 .mdx-content article {
@@ -159,9 +158,14 @@ h6 {
 }
 
 .mdx-content code {
-    border-radius: 3px;
     font-family: "Consolas", monospace;
     font-size: 0.9em;
+}
+
+.mdx-content :not(pre) > code {
+    background-color: #2d2d2d;
+    padding: 2px 6px;
+    border-radius: 3px;
 }
 
 /* GitHub Dark Theme Syntax Highlighting */
