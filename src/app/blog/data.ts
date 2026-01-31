@@ -1,7 +1,14 @@
-import type { BlogPost, Quote} from "./types";
+import type { BlogPost, Quote } from "./types";
 import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
+    {
+        title: "Homelab Setup P2: Electric Boogaloo",
+        description: "It's been (almost) a year, let's see what's changed",
+        date: "01/30/2026",
+        route: "/blog/homelab-setup-2026-01",
+        tags: [Tags.TECHNOLOGY],
+    },
     {
         title: "2025 is (my) year of Linux desktop",
         description: "Weeeeeeee down the rabbit hole we go.",
@@ -11,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         title: "Scoop Everything",
-        description: "Confessing my new love for utilizing a good command line installer.",
+        description: "Scoop scoop scoop scoop scoop",
         date: "08/18/2025",
         route: "/blog/scoop-everything",
         tags: [Tags.PERSONAL],
@@ -28,7 +35,7 @@ export const blogPosts: BlogPost[] = [
         description:
             "I've come to a checkpoint of my homelab. Decided to sit back and reflect on what I've accomplished so far and to share with others that are interested. I plan on updating this when significant changes are made to keep as a log.",
         date: "02/17/2025",
-        route: "/blog/homelab-setup",
+        route: "/blog/homelab-setup-2025-02",
         tags: [Tags.TECHNOLOGY],
     },
     {

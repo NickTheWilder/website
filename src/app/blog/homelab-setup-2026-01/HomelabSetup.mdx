@@ -1,0 +1,76 @@
+# Homelab Setup as of Jan 30th, 2026
+
+It's almost been a year since my last update on what's changed with my Homelab. Time to update that.
+I knew once I started this stuff I'd never get out of it. 
+
+You'll notice a lot of this has become "Ahh I really _need_ this" to "Hey, _can_ I do this?" and then impulsively purchase and do w/e the idea of the day is. But honestly learning more than what I thought out of it and having too much fun in the process.
+
+## Hardware
+**Server**: ZimaBlade 7700
+
+No changes and no complaints
+
+**PoE Switch**: [TP-Link TL-SG1008P](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1008p/)
+
+Already looking to expand...
+
+*Now to the fun stuff*
+
+**Cameras**:  [Reolink RLC-520A ](https://www.tp-link.com/us/business-networking/unmanaged-switch/tl-sg1008p/)
+
+These cameras are better than most businesses and schools. PoE and connected directly to home assistant (more below). Set up on my front porch and back porch. [Frigate](https://docs.frigate.video/) to serve for object detection, truly amazing. *chefs kiss*
+
+**Mesh WiFi**: [Motorola MH7023 ](https://www.newegg.com/motorola-mh7023-10-mesh-wifi-system/p/N82E16833301070)
+
+Since I've started working on a laptop, I have the freedom to work on my back porch, but my poor AT&T router doesn't reach from my office to there. So rather than upgrade or move the router, let's just buy a whole mesh system for the house. 
+
+Entirely way too overkill for the house, but it's cool right?
+
+**Moisture Meter:** [Ecowitt GW1000](https://www.ecowitt.com/shop/goodsDetail/16#) with [WH51 Wireless Soil Moisture Meter](https://shop.ecowitt.com/products/wh51)
+
+Because why not? It's in my garden and keeps me on track of watering. I've already got an automatic watering nozzle - thingy. But why not?
+
+## Software Stack
+
+**Base OS**: CasaOS 
+
+This has primarily turned into the NAS only, previously I tried to use the UI that was provided for the containers, but bah-hum-bug it's not useful at all.
+
+**Container Management**: Portainer
+
+Portainer is still the backbone of the system. Probably won't change here.
+### Containers
+
+#### 1. Pi-hole
+You know how nice it is to have the wife send me recipes and I'm not immediately spammed with ads? I can actually use those stupid sites now? Aside from ads, it's amazing how many trackers are now also blocked from the [***huge*** blocklist](https://media.githubusercontent.com/media/zachlagden/Pi-hole-Optimized-Blocklists/refs/heads/main/lists/all_domains.txt) that I use. Now that I'm adding more hardware across the house, it's amazing how chatty everything is. Block block block block block block
+
+Junk! Be dumb! Not smart! My moisture meter should send me data, nobody else!
+
+#### 2. Home Assistant
+  - Google Nest Thermostat
+  - OpenWeatherMap (AccuWeather is [no longer free](https://community.home-assistant.io/t/accuweather-to-discontinue-free-access-to-core-weather-api/913787) 🍅🍅🍅)
+  - Reolink (cameras)
+  - Ecowitt (moisture meter)
+
+Perfect perfect perfect perfect perfect! and it's only going to grow!
+
+#### 3. Frigate NVR
+Local AI-powered camera recording and object detection for the cameras. Basically my own ring cameras, but I get to control it. Honestly one of the biggest draws for me getting my own cameras was to see how easy it was to setup object detection. I don't live in a bad part of town, moreso, I just wanted to have AI object detection on a camera... so I did it.
+
+**Features**:
+  - AI object detection (person, car, packages, etc)
+  - Motion-based recording 
+  - Snapshots enabled for review
+  
+**Downside:** When the model is recording and detecting an object CPU spikes up to 60%+ from it's usual less than 5% 😬. I looked into maybe [coral](https://www.coral.ai/products/) has a solution for this? Decided to leave it as it is, but something to note for later.
+
+#### 4. Glance Dashboard
+Unified home lab dashboard and my (pseudo) service monitoring. I say pseudo because previously I used Uptime Kuma, which is a proper program for monitoring, but I really didn't see a need for it for what I'm using. So I'll use the small widget that Glance provides for it. It's has become my homepage on my browsers, just a quick look (or glance) at everything before start surfing.
+
+**Features**:
+  - Service status monitoring with visual indicators
+  - Weather widget for local conditions
+  - Stock ticker monitoring
+  - Search functionality with custom shortcuts
+  - Quick links to all homelab services
+  - Feed from hackernew's top articles
