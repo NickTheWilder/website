@@ -10,7 +10,6 @@
 
 .link {
     display: block;
-    padding-top: 15px;
     color: var(--primary-blue);
     font-weight: 500;
     cursor: pointer;

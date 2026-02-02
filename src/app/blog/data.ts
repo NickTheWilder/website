@@ -3,6 +3,12 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Nothing changes if nothing changes",
+        date: "02/02/2026",
+        route: "/blog/nothing-changes-if-nothing-changes",
+        tags: [Tags.PERSONAL],
+    },
+    {
         title: "Homelab Setup P2: Electric Boogaloo",
         description: "It's been (almost) a year, let's see what's changed",
         date: "01/30/2026",

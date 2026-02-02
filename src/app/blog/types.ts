@@ -1,6 +1,6 @@
 export interface BlogPost {
     title: string;
-    description: string;
+    description?: string;
     date: string;
     route: string;
     tags: Tags[];
