@@ -6,13 +6,15 @@ export interface BlogPost {
     tags: Tags[];
 }
 
-export enum Tags {
-    BUSINESS = "Business",
-    PROGRAMMING = "Programming",
-    PSYCHOLOGY = "Psychology",
-    TECHNOLOGY = "Technology",
-    PERSONAL = "Personal",
-}
+export const Tags = {
+    BUSINESS: "Business",
+    PROGRAMMING: "Programming",
+    PSYCHOLOGY: "Psychology",
+    TECHNOLOGY: "Technology",
+    PERSONAL: "Personal",
+} as const;
+
+export type Tags = (typeof Tags)[keyof typeof Tags];
 
 export interface Quote {
     quote: string;
