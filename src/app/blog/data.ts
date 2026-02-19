@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Tic Tac Toe",
+        description: "Impossible to win! I thought it's been solved already.",
+        date: "02/18/2026",
+        route: "/blog/tic-tac-toe",
+        tags: [Tags.PERSONAL, Tags.PSYCHOLOGY],
+    },
+    {
         title: "My Spotify Playlists",
         description: "A living document for my spotify playlists. Sharing things that make me happy :)",
         date: "02/10/2026",
