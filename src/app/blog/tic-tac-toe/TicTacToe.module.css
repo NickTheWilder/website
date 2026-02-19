@@ -1,0 +1,188 @@
+.container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.status {
+    font-size: 1.25rem;
+    min-height: 2rem;
+    color: #fff;
+}
+
+.gameArea {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 150px;
+}
+
+.boardArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background-color: #333;
+    padding: 8px;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #252525;
+    border: none;
+    border-radius: 4px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:hover:not(:disabled) {
+    background-color: #2d2d2d;
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+.cell.x,
+.x,
+.cell.o,
+.o {
+    color: var(--primary-blue);
+}
+
+.resetButton {
+    background-color: var(--primary-blue);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.resetButton:hover {
+    background-color: #008bb8;
+    transform: translateY(-1px);
+}
+
+.resetButton:active {
+    transform: translateY(0);
+}
+
+.scoreboard {
+    padding: 0;
+}
+
+.scoreTitle {
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.scoreMarker {
+    color: #888;
+}
+
+.scoreRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+}
+
+.scoreLabel {
+    color: #fff;
+    font-weight: 500;
+}
+
+.scoreValue {
+    color: #888;
+}
+
+.toggleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.toggleLabel {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.toggle {
+    display: flex;
+    background-color: #252525;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.toggleButton {
+    background-color: transparent;
+    color: #888;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+    color: #fff;
+}
+
+.toggleButton.active {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+@media (max-width: 640px) {
+    .gameArea {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .toggleContainer {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
