@@ -1,0 +1,105 @@
+# Differences in Logging Levels
+
+## Purpose of Logs
+
+Logs exist primarily to **troubleshoot production issues without needing to replicate them locally**. This means you should never have a need to copy a production database to a dev environment just to investigate a bug, the logs should give you enough context to diagnose problems after the fact.
+
+Two competing concerns to keep in mind:
+
+- You want a **rich set of information**, especially around errors
+- You don't want to **overwhelm the logging system** or turn it into a second database (_and you must avoid logging PII!_)
+
+## Log Levels
+
+### 💀 - Fatal
+
+This is the most critical level of events. These issues demand immediate attention
+
+**Example:** Application fails during startup
+**When to use:** Issues that prevent the system from successfully initializing
+
+### ❌ - Error
+
+Something went wrong that **shouldn't have happened** and warrants investigation. This doesn't necessarily mean the application crashed, it means the system encountered a state it has no good answer for.
+
+**Example:** Critical dependencies are missing, thrown exceptions, application crashed.
+**When to use:** Unexpected failures, unhandled edge cases, states that indicate something upstream is broken.
+
+### ⚠️ - Warning
+
+Something is **wrong, but the system recovered** via a fallback or default behavior. The operation succeeded, but not ideally.
+
+**Example:** A configuration value is missing, but the system fell back to a default. The system kept running, but someone should know about it.
+**When to use:** Degraded operation, missing-but-optional data, recoverable anomalies.
+
+### ℹ️ - Information
+
+High-level **lifecycle events** for an operation or process. Think of this as the "happy path" narrative or what happened at a coarse level.
+
+**Example:** "Operation completed successfully", "Connection established", "Job started", "User authenticated".
+**When to use:** Key milestones in an operation's lifecycle that are useful for auditing or tracing flow without being noisy.
+
+### 🐞 - Debug
+
+Granular **success states and internal checkpoints** useful during development or deep investigation. This level should be safe to disable in production without losing meaningful signal.
+
+**Example:** "Email sent successfully", "Cache hit for key X", "Validation passed".
+**When to use:** Step-by-step operation confirmations, internal state snapshots, anything too noisy for production but helpful when diagnosing locally.
+
+### 👣 - Verbose
+
+The nosiest level and rarely used to log and rarely ever displayed in production environments.
+
+**Example:** "Started session", "Ended session".
+**When to use:** Start & stop of applications, local variables that could be useful at a glance in logs.
+
+## Key Principles
+
+### Don't log validation errors
+
+Validation errors caused by user inputs (invalid login, form inputs, etc) are not errors to be logged in Seq. The system is working exactly as designed, it was just fed bad data. Logging validation as error adds noise to the log and creates false alarms.
+
+### Collect all errors before reporting, don't fail fast
+
+When validating an operation or configuration, **find all issues first**, then report them together. Failing on the first error forces users (and developers) to fix problems one at a time in multiple round trips.
+
+Think about how frustrating it would be if a compiler only reported the first compile error. The same principle applies here.
+
+### Use Log Context to enrich failure messages
+
+Rather than scattering individual log statements throughout processing, consider a **log context pattern**:
+
+1. When an operation starts, create a log context
+2. As processing happens, push relevant structured data into that context
+3. When the operation completes, attach the full collected context to a single log event
+
+The scope of a log context depends on the protocol: request-scoped for HTTP, connection-scoped for WebSockets, or packet-scoped for UDP. This turns a bare `"Operation failed"` into a rich log entry that includes exactly what failed and what data was involved, giving you a real starting point for debugging.
+
+### Do not log uncontrollable upstream exceptions
+
+The following exceptions (but not limited to) are important to know but should not be logged in Seq. These exceptions often appear in upstream event logs (such as Windows event logs).
+
+- `OutOfMemoryException`
+- `StackOverflowException`
+- `AccessViolationException`
+
+These exceptions are critical errors but may not originate from your application. Instead, they arise from shared resources among multiple applications and are unrecoverable within your application. As an example, if you see a server randomly start-up without a proper shut-down, this is likely indicating one of the above issues has occurred.
+
+## Quick Reference
+
+| Level           | Meaning                                                                 | Example                                               |
+| --------------- | ----------------------------------------------------------------------- | ----------------------------------------------------- |
+| 💀 **Fatal**       | You should be getting paged about these                                 | Application is completely down                        |
+| ❌ **Error**       | Unexpected failure, investigation needed                                | Functional dependencies are missing or not configured |
+| ⚠️ **Warning**     | Something wrong, but recovered with fallback or not explicitly required | Config value missing, using default                   |
+| ℹ️ **Information** | Normal lifecycle milestone                                              | Operation completed, connection established           |
+| 🐞 **Debug**       | Granular success states, internal checkpoints                           | Email sent, cache hit, validation passed              |
+| 👣 **Verbose**     | Last resorts of debugging                                               | Start & stop of application, local variables          |
+
+## Documentation and Further Reading
+
+- [Seq Logging levels](https://seq.readme.io/v2/docs/logging-levels)
+- [Serilog Documentation](https://seq.readme.io/v2/docs/getting-started#writing-structured-events)
+- [Writing Log Events (Serilog)](https://github.com/serilog/serilog/wiki/Writing-Log-Events)
+
+*This document was originally published internally at work and reviewed by coworkers. It has been revised for this blog to be more technology-agnostic.*

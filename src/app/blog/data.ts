@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Differences in Logging Levels",
+        description: "Understanding log levels and best practices for effective production troubleshooting.",
+        date: "02/26/2026",
+        route: "/blog/logging-levels",
+        tags: [Tags.PROGRAMMING],
+    },
+    {
         title: "Tic Tac Toe",
         description: "Impossible to win! I thought it's been solved already.",
         date: "02/18/2026",
