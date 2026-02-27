@@ -2,6 +2,7 @@
     "name": "website",
     "version": "0.1.1",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -12,9 +13,9 @@
     "dependencies": {
         "@mdx-js/loader": "^3.1.1",
         "@mdx-js/react": "^3.1.1",
-        "@netlify/plugin-nextjs": "^5.15.6",
-        "@next/mdx": "16.1.5",
-        "next": "16.1.5",
+        "@netlify/plugin-nextjs": "^5.15.8",
+        "@next/mdx": "16.1.6",
+        "next": "16.1.6",
         "react": "19.2.4",
         "react-dom": "19.2.4",
         "rehype-highlight": "^7.0.2",
@@ -22,13 +23,13 @@
         "remark-gfm": "^4.0.1"
     },
     "devDependencies": {
-        "@eslint/compat": "^2.0.1",
+        "@eslint/compat": "^2.0.2",
         "@types/mdx": "^2.0.13",
-        "@types/node": "^25.0.10",
-        "@types/react": "19.2.7",
+        "@types/node": "^25.3.2",
+        "@types/react": "19.2.14",
         "@types/react-dom": "19.2.3",
-        "eslint": "9.39.2",
-        "eslint-config-next": "16.1.5",
+        "eslint": "^9",
+        "eslint-config-next": "16.1.6",
         "prettier": "^3.8.1",
         "typescript": "^5.9.3"
     }
