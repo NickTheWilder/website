@@ -87,12 +87,12 @@ These exceptions are critical errors but may not originate from your application
 
 ## Quick Reference
 
-| Level           | Meaning                                                                 | Example                                               |
-| --------------- | ----------------------------------------------------------------------- | ----------------------------------------------------- |
+| Level              | Meaning                                                                 | Example                                               |
+| ------------------ | ----------------------------------------------------------------------- | ----------------------------------------------------- |
 | 💀 **Fatal**       | You should be getting paged about these                                 | Application is completely down                        |
 | ❌ **Error**       | Unexpected failure, investigation needed                                | Functional dependencies are missing or not configured |
 | ⚠️ **Warning**     | Something wrong, but recovered with fallback or not explicitly required | Config value missing, using default                   |
-| ℹ️ **Information** | Normal lifecycle milestone                                              | Operation completed, connection established           |
+| <span style={{whiteSpace: 'nowrap'}}>ℹ️ **Information**</span> | Normal lifecycle milestone                                              | Operation completed, connection established           |
 | 🐞 **Debug**       | Granular success states, internal checkpoints                           | Email sent, cache hit, validation passed              |
 | 👣 **Verbose**     | Last resorts of debugging                                               | Start & stop of application, local variables          |
 
