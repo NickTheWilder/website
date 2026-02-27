@@ -1,7 +1,6 @@
 # Notes for "package.json"
 
-NodeJS/NPM don't allow comments in `package.json`, so we keep
-notes and comments in this markdown file.
+Packages that are outdated waiting that are not supposed by other dependencies
 
 ## Outdated
 
