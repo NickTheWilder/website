@@ -4,7 +4,7 @@ import { Tags } from "./types";
 export const blogPosts: BlogPost[] = [
     {
         title: "Differences in Logging Levels",
-        description: "Understanding log levels and best practices for effective production troubleshooting.",
+        description: "What should be logged as a warning, error, debug, or info?",
         date: "02/26/2026",
         route: "/blog/logging-levels",
         tags: [Tags.PROGRAMMING],
