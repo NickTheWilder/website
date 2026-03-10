@@ -57,7 +57,7 @@ The nosiest level and rarely used to log and rarely ever displayed in production
 
 ### Don't log validation errors
 
-Validation errors caused by user inputs (invalid login, form inputs, etc) are not errors to be logged in Seq. The system is working exactly as designed, it was just fed bad data. Logging validation as error adds noise to the log and creates false alarms.
+Validation errors caused by user inputs (invalid login, form inputs, etc) are not errors to be logged. The system is working exactly as designed, it was just fed bad data. Logging validation as error adds noise to the log and creates false alarms.
 
 ### Collect all errors before reporting, don't fail fast
 
@@ -77,7 +77,7 @@ The scope of a log context depends on the protocol: request-scoped for HTTP, con
 
 ### Do not log uncontrollable upstream exceptions
 
-The following exceptions (but not limited to) are important to know but should not be logged in Seq. These exceptions often appear in upstream event logs (such as Windows event logs).
+The following exceptions (but not limited to) are important to know but should not be logged. These exceptions often appear in upstream event logs (such as Windows event logs).
 
 - `OutOfMemoryException`
 - `StackOverflowException`
