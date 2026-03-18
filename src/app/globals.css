@@ -130,13 +130,16 @@ h6 {
     margin: 24px 0 16px 0;
 }
 
+.mdx-content h3 {
+    margin-top: 20px;
+}
+
 .mdx-content strong {
     font-weight: 600;
 }
 
 .mdx-content ul {
     padding-left: 20px;
-    padding-bottom: 20px;
 }
 
 .mdx-content li {
