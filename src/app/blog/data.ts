@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "How to Make Ethernet Cables",
+        description: "Step by step guide to cut and splice your own ethernet cables.",
+        date: "03/18/2026",
+        route: "/blog/make-ethernet-cable",
+        tags: [Tags.TECHNOLOGY],
+    },
+    {
         title: "Differences in Logging Levels",
         description: "What should be logged as a warning, error, debug, or info?",
         date: "02/26/2026",

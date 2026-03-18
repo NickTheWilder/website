@@ -94,7 +94,6 @@ h6 {
 }
 
 .mdx-content table {
-    width: 75%;
     border-collapse: collapse;
     margin: 1.5rem 0;
     background-color: #252525;
@@ -105,14 +104,14 @@ h6 {
 .mdx-content th {
     background-color: #2d2d2d;
     color: var(--primary-blue);
-    padding: 12px;
+    padding: 12px 1rem;
     text-align: left;
     font-weight: 500;
     border-bottom: 2px solid #333;
 }
 
 .mdx-content td {
-    padding: 12px;
+    padding: 12px 1rem;
     border-bottom: 1px solid #333;
     color: #fff;
 }
@@ -137,6 +136,7 @@ h6 {
 
 .mdx-content ul {
     padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .mdx-content li {
