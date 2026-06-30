@@ -1,0 +1,77 @@
+# The Problems with LLMs
+
+I consider myself a power user of AI agents and programming. Almost every task I do now is using an agent in some sort of way, whether that's planning out an implementation, drafting PoC's, or actually implementing a new feature. I rarely open an editor now, offloading the "monkey work" so I can focus on the more important work.
+
+LLMs are great with the context you provide it. But a new agent's session only knows what you provide it. Polluting the context of an agent is a disaster. Modern sessions are still akin to having an eager beaver dev that is excited to implement anything and everything fast and efficient. Give it more context that what is required and you're off hallucinating new implementations that aren't what you asked for.
+
+Often times I'm working on multiple tasks at a same time, so the context switching is a lot to bear for me. Try having 1 agent working on multiple tasks, disaster!
+
+# Insert Obsidian
+
+Before the age of LLMs (still crazy how December of 2025 these things finally became useful), I frequently took notes using obsidian. I've established a good pattern for "field notes"; meeting summaries, homelab documentation, important cli commands, list goes on. Obsidian is the perfect tool for offloading low effort memories to a quick note to reference later.
+
+# Enter qmd
+
+One day doomscrolling Twitter I found Tobi Lütke posted about a new mini LLM-assisted CLI search engine called [qmd](https://github.com/tobi/qmd). Talk about a gold mine.
+
+Taking notes is only half the battle. A vault full of notes is useless to an agent if it can't find the right one. This is the half that changed how I work. qmd indexes the whole vault and combines keyword search, semantic vector search, and LLM re-ranking, all running locally. So instead of me hunting for the right doc and pasting it in, the agent searches for it.
+
+That flips the relationship. The vault stops being *my* archive and becomes shared memory between me and the agent. I write the note once, in the natural flow of work, and any future session can reach in and grab exactly the piece it needs. "I think we hit something like this before, search my vault and see if the fix still applies." The agent pulls up a four-month-old debugging session and we're off, no context pasting, no re-explaining.
+
+# Professional work
+
+I plan out *every* ticket before working on it in obsidian, well, agents do the planning. I created a skill to plan out tickets, keep the scope narrow; establish files needed to change, what is the acceptance criteria, any unclear considerations or blocker before starting, and most importantly review the agent's thoughts before it starts changing code. Once I'm satisfied with the planning document, it's a "ok, start the implementation" and off you go.
+
+Make your changes to that markdown file, answer any questions right there in the doc, keep a live status of your changes.
+
+## Fixing problems before they happen
+
+Having agents plan out what they want to change in a markdown document gives you a high level overview before they start making changes. You can quickly correct any incorrect assumptions by directly editing the document thus avoiding early disasters. I leave a section at the bottom of each of these planning documents for "Risks / Open Items" where the agent can directly notify me of unclear changes or potential risks for these changes. Getting ahead of these problems early on and mitigating these from happening.
+
+## Removing context pollution
+
+Back to context pollution with LLMs. Narrowing the context to only focus on what's needed for changes limits the ability for an agent to run off and implement time wasting changes. If you keep the status of the changes updated in the document, you can have multiple fresh sessions and say "take a look at the document for XXX, this is the current status of this feature, double check the code changes line up, and continue with the rest of the changes needed". Boom, done.
+
+## Historical documentation
+
+If I ever forget why I implemented something a certain way, the decisions are clearly laid out in these documents. Allowing me to quickly answer questions and respond to problems efficiently. Also I can point agents to these historical documents to figure out similar implementations that work and point them in the right direction.
+
+It's like I'm adapting these agents to mirror my thought processes of frequently taking notes.
+
+# Outside of professional work
+
+Outside of professional work, I use obsidian documentation for my homelab. I will always take a note of debugging sessions, checkpoints, current status of hardware, and potential ideas (and dreams). 
+## Previous debugging sessions
+
+I had a 4 month long issue where my zigbee network would not build the bridge between my devices and create the mesh system, after unplugging & replugging, reinstalling containers, desk slams, and other important issues. Turns out walls are not good at relaying WiFi signals.
+
+Rather than documenting each one of these steps taken, I can shortcut to what was the issue, and what was the fix. Next time I run into something similar I can point the agent to a debugging sessions saying "I think we had something similar here, take a look and see if this is the same problem"
+
+## Guides and how-to's
+
+Not every note is a problem I'm solving. A lot of them are guides I write once and follow forever. When I wired my house for ethernet I wrote down the termination order so I never have to look it up again. Setting up Frigate with my Reolink cameras, the Plex media server, Pi-hole and WireGuard on the ZimaBlade, each one got its own step by step guide as I went. The first time is research. The second time is copy and paste.
+
+The payoff used to be just for future me. Now it's for the agent too. When I rebuild a service or migrate hardware, I point a session at the guide and it already knows the exact steps, ports, and gotchas I hit last time. No re-deriving, no guessing.
+
+## Research before I build
+
+I rarely buy or build anything without a research doc first. Before I picked a robot vacuum I had a doc weighing models that run Valetudo so I could keep it off the cloud. Same story for PoE cameras, e-readers, soil moisture sensors for the garden. I dump specs, prices, pros and cons, and links to where I found them, and by the time I'm ready to pull the trigger the decision is already made on paper.
+
+This is also where the dreams live. Half these docs are projects I may never get to, but writing them down means the idea doesn't evaporate. And now the agents help fill them out, I can hand off "compare these three options and tell me the tradeoffs" and the research doc grows itself while I do something else.
+
+## Living documents
+
+The mother of all documents in my vault is "homelab-reference". Whenever I ask a question about my homelab, I have a skill that loads all relevant information into the agents context window, when I make a change to my architecture, the document is updated. Everything in this document is current. It contains core philosophies, network topology, active containers, active hardware, currently in progress items, research initiatives, everything.
+
+Creating this living document gives me a solid starting point for any questions I have about my homelab. Without obsidian, this wouldn't be possible.
+
+# Closing thoughts
+
+None of this is really about AI. It's about writing things down. I was already taking field notes long before LLMs were useful. The vault was always my second brain. The agents just turned out to be the second reader.
+
+The bottleneck with an agent was never how smart it is. It's how much of *my* context it can see. Obsidian is where that context lives, and qmd is how the agent reaches in and grabs the right piece. Plan in a doc, search the old docs, keep the living ones current. The agent stops guessing and starts mirroring how I already think.
+
+It's not a free lunch. A living document only stays useful because I have the discipline to keep it current. A stale doc is worse than no doc, because it lies to you with confidence. But that discipline was always the cost of good notes, agents or not.
+
+Turns out the best way to level up an LLM was a habit I'd had for years.
+

@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Obsidian Levels Up LLMS",
+        description: "I've been a frequent note taker pre-AI. Adding AI to my obsidian vault is a game changer.",
+        date: "06/30/2026",
+        route: "/blog/obsidian",
+        tags: [Tags.TECHNOLOGY, Tags.PERSONAL],
+    },
+    {
         title: "How to Make Ethernet Cables",
         description: "Step by step guide to cut and splice your own ethernet cables.",
         date: "03/18/2026",
