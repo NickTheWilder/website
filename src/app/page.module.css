@@ -1,6 +1,5 @@
 .container {
     margin: auto;
-    height: 500px;
     max-width: 850px;
     padding: 20px;
     font-size: 23px;
@@ -32,7 +31,6 @@
 .links {
     width: 100%;
     text-align: center;
-    padding-top: 25px;
 }
 
 .linkTitle {

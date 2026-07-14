@@ -74,6 +74,7 @@ h6 {
 }
 
 .mdx-content {
+    width: min(65.75rem, calc(100vw - 2rem));
     max-width: 65.75rem;
     margin-bottom: 4rem;
     overflow-x: hidden;
@@ -94,11 +95,13 @@ h6 {
 }
 
 .mdx-content table {
+    display: block;
+    max-width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
+    overflow-x: auto;
     background-color: #252525;
     border-radius: 4px;
-    overflow: hidden;
 }
 
 .mdx-content th {
