@@ -24,12 +24,14 @@
     },
     "devDependencies": {
         "@eslint/compat": "^2.1.0",
+        "@next/eslint-plugin-next": "^16.2.10",
         "@types/mdx": "^2.0.14",
         "@types/node": "^26.1.1",
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
-        "eslint": "^9.39.5",
-        "eslint-config-next": "16.2.10",
+        "@typescript-eslint/parser": "^8.64.0",
+        "eslint": "^10.7.0",
+        "eslint-plugin-react-hooks": "^7.1.1",
         "prettier": "^3.9.5",
         "typescript": "^5.9.3"
     }
