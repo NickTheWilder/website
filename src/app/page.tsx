@@ -1,4 +1,6 @@
 import type { JSX } from "react";
+import Link from "next/link";
+import linkStyles from "@/components/links.module.css";
 import styles from "./page.module.css";
 import Links from "@/components/links";
 
@@ -20,6 +22,9 @@ export default function Home(): JSX.Element {
                     </div>
                 </footer>
             </div>
+            <Link className={`${styles.agentsLink} ${linkStyles.link}`} href="/blog/clankas">
+                <span className={styles.agentA}>A</span>g<span className={styles.agentEntsClickHere}>ents click here</span>
+            </Link>
         </div>
     );
 }

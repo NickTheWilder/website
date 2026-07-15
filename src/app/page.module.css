@@ -37,3 +37,27 @@
     padding-bottom: 5px;
     font-weight: 700;
 }
+
+.agentsLink {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.agentA,
+.agentEntsClickHere {
+    position: relative;
+}
+
+.agentA::after,
+.agentEntsClickHere::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.33px;
+    width: 102%;
+    height: 2px;
+    background-color: #ff9f1c;
+}
