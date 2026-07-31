@@ -6,7 +6,7 @@ import Links from "@/components/links";
 
 export default function Home(): JSX.Element {
     return (
-        <div style={{ minHeight: "100vh", display: "flex" }}>
+        <div className={styles.page}>
             <div className={styles.container}>
                 <p className={styles.hero}>Nick Wilder</p>
                 <p className={styles.howdy}>Howdy! 🤠</p>
