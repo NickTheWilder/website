@@ -30,6 +30,7 @@ const booksByYear: LibraryItemsByYear[] = [
     {
         year: 2026,
         books: [
+            { title: "DHH: How to Build a Profitable Company Without Losing Control", author: "David Senra", url: "https://youtu.be/76rR68ktQvo?is=ZDNyiNOmu3N0uz3e", contentType: "podcast" },
             { title: "Dark Age", author: "Pierce Brown", url: "https://www.goodreads.com/book/show/29226553-dark-age" },
             { title: "Iron Gold", author: "Pierce Brown", url: "https://www.goodreads.com/book/show/33257757-iron-gold" },
             { title: "Theology and Sanity", author: "Frank Sheed", isbn: "978-0898704709", url: "https://www.goodreads.com/book/show/666640.Theology_and_Sanity" },
@@ -55,7 +56,6 @@ const booksByYear: LibraryItemsByYear[] = [
                 author: "Richard W. Hamming",
             },
             { title: "A.I. Should Elevate Your Thinking, Not Replace It", author: "Koshy John", url: "https://www.koshyjohn.com/blog/ai-should-elevate-your-thinking-not-replace-it/", contentType: "article" },
-            { title: "DHH: How to Build a Profitable Company Without Losing Control", author: "David Senra", url: "https://youtu.be/76rR68ktQvo?is=ZDNyiNOmu3N0uz3e", contentType: "podcast" },
         ],
     },
     {
