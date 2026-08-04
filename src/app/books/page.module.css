@@ -16,6 +16,10 @@
     padding: 20px 0 10px;
 }
 
+.description {
+    font-weight: 500;
+}
+
 .filterGroup {
     margin-bottom: 1.5rem;
 }
