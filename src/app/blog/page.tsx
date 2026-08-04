@@ -49,19 +49,19 @@ export default function Blog(): JSX.Element {
         <div style={{ display: "block" }}>
             <Header />
             <div className={styles.intro}>
-                <h1 className={styles.title}>Blog</h1>
+                <h1 className={styles.title}>blog</h1>
                 <p>
-                    Blog will contain notes from books, courses, and maybe occasional random thoughts. Most of the notes will come from my Obsidian vault served here as a backup using{" "}
+                    blog will contain notes from books, courses, and maybe occasional random thoughts. most of the notes will come from my Obsidian vault served here as a backup using{" "}
                     <Link className={styles.link} href="https://mdxjs.com/">
                         https://mdxjs.com/
                     </Link>{" "}
                     with minimal extra formatting.
                 </p>
                 <br />
-                <p>Notes will be added as I think they are relevant and polished enough to publish.</p>
+                <p>notes will be added as I think they are relevant and polished enough to publish.</p>
                 <div className={styles.blogContainer}>
                     <div className={styles.blogGrid}>
-                        <h2 className={styles.title}>Recent Posts</h2>
+                        <h2 className={styles.title}>recent posts</h2>
                         {years.map((year) => (
                             <section key={year} className={styles.yearSection}>
                                 <h3 className={styles.yearHeader}>{year}</h3>
@@ -73,7 +73,7 @@ export default function Blog(): JSX.Element {
                     </div>
                     <div className={styles.sidebar}>
                         <div className={styles.tags}>
-                            <h2 className={styles.title}>Filter By Tags</h2>
+                            <h2 className={styles.title}>filter by tags</h2>
                             <TagsList activeTag={activeTag} onTagClick={handleTagClick} />
                         </div>
                         <div className={styles.quotes}>
