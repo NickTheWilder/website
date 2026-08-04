@@ -1,11 +1,56 @@
+.page {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(45rem, 100vw - 2rem);
+}
+
 .container {
-    max-width: 65.75rem;
+    max-width: 45rem;
     margin-top: 10px;
+    position: relative;
+    width: 100%;
 }
 
 .title {
     color: var(--primary-blue);
     padding: 20px 0 10px;
+}
+
+.filterGroup {
+    margin-bottom: 1.5rem;
+}
+
+.filterTitle {
+    color: var(--primary-blue);
+    padding: 20px 0 10px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.filterButton {
+    background-color: transparent;
+    border: 1px solid var(--primary-blue);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px 12px;
+    transition:
+        background-color 0.2s,
+        border-color 0.2s;
+}
+
+.filterButton:hover {
+    background-color: rgba(0, 153, 255, 0.2);
+}
+
+.activeFilter {
+    background-color: var(--primary-blue);
 }
 
 .yearSection {
@@ -55,6 +100,10 @@
 
 @media (max-width: 1024px) {
     .container {
-        margin: 0 1rem;
+        margin: 0;
+    }
+
+    .page header {
+        padding-left: 0;
     }
 }

@@ -1,20 +1,32 @@
+"use client";
+
 import type { JSX } from "react";
+import { useState } from "react";
 import Header from "@/components/header";
 import styles from "./page.module.css";
 
-type Book = {
+type ContentType = "book" | "article" | "podcast";
+
+type LibraryItem = {
     title: string;
     author?: string;
     url?: string;
     isbn?: string;
+    contentType?: ContentType;
 };
 
-type BooksByYear = {
+type LibraryItemsByYear = {
     year: number | string;
-    books: Book[];
+    books: LibraryItem[];
 };
 
-const booksByYear: BooksByYear[] = [
+const contentTypeFilters: { type: ContentType; label: string }[] = [
+    { type: "book", label: "Books" },
+    { type: "article", label: "Articles" },
+    { type: "podcast", label: "Podcasts" },
+];
+
+const booksByYear: LibraryItemsByYear[] = [
     {
         year: 2026,
         books: [
@@ -39,11 +51,11 @@ const booksByYear: BooksByYear[] = [
     {
         year: 2025,
         books: [
-            { title: "Backing up Spotify", author: "annas archive", url: "https://annas-archive.li/blog/backing-up-spotify.html" },
+            { title: "Backing up Spotify", author: "annas archive", url: "https://annas-archive.li/blog/backing-up-spotify.html", contentType: "article" },
             { title: "Slow Productivity", author: "Cal Newport", isbn: "978-0593544853", url: "https://www.goodreads.com/book/show/197773418-slow-productivity" },
             { title: "Learning Patterns", author: "Lydia Hallie, Addy Osmani" },
             { title: "The Pragmatic Programmer", author: "David Thomas & Andrew Hunt" },
-            { title: "Say No by Default", author: "37signals", url: "https://37signals.com/podcast/say-no-by-default/" },
+            { title: "Say No by Default", author: "37signals", url: "https://37signals.com/podcast/say-no-by-default/", contentType: "podcast" },
             { title: "The Art of Leadership", author: "Michael Lopp", url: "https://www.goodreads.com/book/show/50083106-the-art-of-leadership" },
             { title: "The Software Developer's Career Handbook", author: "Michael Lopp" },
             { title: "The Art of Peace", author: "Morihei Ueshiba" },
@@ -59,20 +71,49 @@ const booksByYear: BooksByYear[] = [
             { title: "Building a Storybrand", author: "Donald Miller" },
             { title: "simplicity: sustainable, humane, and effective software development", author: "Dave Thomas", isbn: "979-8888651544", url: "https://www.goodreads.com/book/show/229268652-simplicity" },
             { title: "Contract Testing in Action", author: "Marie Crus and Lewis Prescott", url: "/blog/contract-testing" },
-            { title: "No Hello", author: "@notjosh", url: "https://nohello.net/en/" },
+            { title: "No Hello", author: "@notjosh", url: "https://nohello.net/en/", contentType: "article" },
             { title: "Limitless", author: "Jim Kwik" },
             { title: "Upstream", author: "Dan Heath" },
         ],
     },
 ];
 
+function getContentType(book: LibraryItem): ContentType {
+    return book.contentType ?? "book";
+}
+
 export default function Books(): JSX.Element {
+    const [activeContentType, setActiveContentType] = useState<ContentType | null>(null);
+
+    const filteredBooksByYear = booksByYear
+        .map(({ year, books }) => ({
+            year,
+            books: activeContentType === null ? books : books.filter((book) => getContentType(book) === activeContentType),
+        }))
+        .filter(({ books }) => books.length > 0);
+
     return (
-        <div style={{ display: "block" }}>
+        <div className={styles.page}>
             <Header />
             <main className={styles.container}>
                 <h1 className={styles.title}>books, good articles, interesting podcasts</h1>
-                {booksByYear.map(({ year, books }) => (
+                <aside className={styles.filterGroup}>
+                    <h2 className={styles.filterTitle}>filter by tags</h2>
+                    <div className={styles.filters} aria-label="Filter by tag">
+                        {contentTypeFilters.map(({ type, label }) => (
+                            <button
+                                key={type}
+                                type="button"
+                                className={`${styles.filterButton} ${activeContentType === type ? styles.activeFilter : ""}`}
+                                aria-pressed={activeContentType === type}
+                                onClick={() => setActiveContentType(activeContentType === type ? null : type)}
+                            >
+                                {label}
+                            </button>
+                        ))}
+                    </div>
+                </aside>
+                {filteredBooksByYear.map(({ year, books }) => (
                     <section key={year} className={styles.yearSection}>
                         <h2 className={styles.year}>{year}</h2>
                         <ul className={styles.bookList}>
