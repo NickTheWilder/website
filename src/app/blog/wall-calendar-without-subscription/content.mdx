@@ -1,0 +1,30 @@
+# I Built a Wall Calendar, Without a Subscription
+
+Per the request of the wife, we needed a digital calendar.  We have a paper calendar, but we have created the habit of sharing calendars between our iPhones and it becomes a manual process of converting them to paper. Searching online and I found a few options; [Skylight](https://myskylight.com/calendar/), [Hearth Display](https://www.amazon.com/Amazon-release-Adjustable-Stand-Graphite/dp/B0FKX1M63D) and many more. $300??? and on top of that, a monthly subscription? What a huge scam.
+
+I present, the The Dumb Screen
+
+# The Dumb Screen
+
+The hardware is simple: a 15.6-inch touchscreen monitor and a Raspberry Pi 4 mounted behind it. The Pi boots directly into Chromium and opens a dedicated Home Assistant dashboard in kiosk mode. There is no custom calendar application running on the Pi. It is just a disposable display client. Home Assistant does the real work. It connects to our Apple calendars through CalDAV and owns the dashboard, credentials, weather, cameras, lights, and everything else I decided was useful enough to put on the wall. A small Docker service on my ZimaBlade serves a local photo slideshow beside the calendar.
+
+Full hardware list:
+- Display: [ibw 15.6-inch portable touchscreen](https://www.amazon.com/dp/B0GVRX58RQ) (could be improved by finding a thinner border, but touchscreen is nice)
+- Computer: [raspberry pi 4 model b](www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+- Spare HDMI cable, with a [90 degree adapter](https://www.amazon.com/dp/B0BN697DWH)
+- [USB C cable w/ right angle](https://www.amazon.com/dp/B0DQS6FTX3)
+- Any 9x14 picture frame, I use [this](https://www.amazon.com/dp/B0F86K8JBY) one
+
+Software:
+- [Home Assistant](https://www.home-assistant.io/)
+	- [CalDAV integration](https://www.home-assistant.io/integrations/caldav/)
+	- [Calendar Card Pro](https://community.home-assistant.io/t/calendar-card-pro-a-beautiful-high-performance-calendar-card-for-home-assistant/863711)
+- Custom local photo slideshow ([github](https://github.com/NickTheWilder/ha-slideshow))
+
+That's it, nothing fancy, but more than capable and it's ***extremely*** easy to get a product that's better than these stupid digital calendars that are on the market.
+
+Was building it easier than buying one? Absolutely not. Was it cheaper? Yes. After counting my time? Let's not do that math. Most importantly, it stays on the local network. Apple calendar credentials live in Home Assistant, the photos stay on my ZimaBlade, and there is no display vendor sitting between me and the calendar. But it is mine, it does exactly what I want, and nobody can put the family calendar behind a premium plan next year.
+
+Chef's kiss.
+
+<img src="/blog/wall-calendar.jpg" alt="The finished wall calendar mounted in its picture frame" style={{ width: "75%" }} />

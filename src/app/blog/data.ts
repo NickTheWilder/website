@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "I Built a Wall Calendar, Without a Subscription",
+        description: "A local-first wall calendar built with a Raspberry Pi, Home Assistant, and no monthly fee.",
+        date: "08/22/2026",
+        route: "/blog/wall-calendar-without-subscription",
+        tags: [Tags.TECHNOLOGY, Tags.PERSONAL],
+    },
+    {
         title: "Obsidian Levels Up LLMS",
         description: "I've been a frequent note taker pre-AI. Adding AI to my obsidian vault is a game changer.",
         date: "06/30/2026",
