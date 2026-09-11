@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "The Train Analogy",
+        description: "Welcome to the future, don't get run over!",
+        date: "09/10/2026",
+        route: "/blog/the-train-analogy",
+        tags: [Tags.PERSONAL, Tags.TECHNOLOGY, Tags.PSYCHOLOGY],
+    },
+    {
         title: "I Built a Wall Calendar, Without a Subscription",
         description: "A local-first wall calendar built with a Raspberry Pi, Home Assistant, and no monthly fee.",
         date: "08/22/2026",
