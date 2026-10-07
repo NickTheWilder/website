@@ -6,7 +6,9 @@ import Script from "next/script";
 import { CONSOLE_ART, consoleArtStyle } from "./consoleArt";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://nickthewilder.com"),
     title: "Nick Wilder",
+    description: "Nick Wilder's personal website and blog.",
     icons: {
         icon: "/favicon.ico",
     },
