@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "I love obsessive people",
+        description: "Hearing people share what they are passionate about is one of my biggest joys in life.",
+        date: "10/27/2026",
+        route: "/blog/obsessive-people",
+        tags: [Tags.PERSONAL, Tags.PSYCHOLOGY],
+    },
+    {
         title: "The Train Analogy",
         description: "Welcome to the future, don't get run over!",
         date: "09/10/2026",
