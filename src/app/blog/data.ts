@@ -3,6 +3,13 @@ import { Tags } from "./types";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Codex Rejection Workflow",
+        description: "Three skills to capture agent mistakes and turn useful feedback into improvements to the harness.",
+        date: "11/03/2026",
+        route: "/blog/harness-rejection",
+        tags: [Tags.PROGRAMMING, Tags.TECHNOLOGY],
+    },
+    {
         title: "I love obsessive people",
         description: "Hearing people share what they are passionate about is one of my biggest joys in life.",
         date: "10/27/2026",

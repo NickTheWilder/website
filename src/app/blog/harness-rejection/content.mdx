@@ -1,0 +1,212 @@
+# Codex Rejection Workflow
+
+Fixing the same agent mistake twice is annoying. Fixing it a third time means the feedback isn't going anywhere. I wanted a way to capture those corrections without derailing what I was working on, then come back and turn the useful ones into changes the agent would keep using. This is the rejection workflow I landed on.
+
+I use three Codex skills to capture agent mistakes while work is in progress, then turn useful lessons into changes to the agent harness. This keeps the immediate task moving and gives the feedback a separate, deliberate review.
+
+## 1\. Capture the rejection during active work
+
+When I reject an agent’s code, tests, plan, or response, I invoke `$rejection-add` or state the objection directly. The agent records what I rejected, my feedback, and a useful link or path. A clarification of the same objection belongs with the existing entry; an ordinary new request is not a rejection.
+
+In a Herdr session, `$rejection-add` sends that intake to a dedicated agent in the `rejection-log` workspace without waiting for it to finish. The working agent continues the original task. A successful prompt means the rejection was queued; it does not yet prove the vault note was updated.
+
+## 2\. Keep one log writer
+
+The dedicated agent uses `$rejection-log` to maintain the `Agent Rejections` note in my Obsidian vault. Each distinct entry records the date, a short description, the rejected work, my feedback, a category, and context when available. The allowed categories are code quality, test quality, and response.
+
+That agent is the single writer for the note. It avoids duplicate entries, updates the note’s date, and runs `qmd update` so the new entry is searchable. It does not investigate or fix the rejected work.
+
+## 3\. Resolve the queue in a separate session
+
+I invoke `$rejection-resolve` when I want to work through the log. The main agent reads every entry in scope and checks the relevant source work. It proposes a concrete plan that names each entry, the files to change, the intended behavior, the checks, and which entries will be removed. I approve or revise that plan before any skill, script, setup, or log edit.
+
+The response should fit the failure: update an existing skill when its guidance was missing, create a distinct skill only for repeated judgment-heavy work, write a script for deterministic repeated steps, or make no reusable artifact for a one-off mistake. After an approved change is verified, the agent removes addressed entries, keeps unresolved ones, updates the note’s date, and runs `qmd update`.
+
+`$rejection-resolve` changes the Codex harness. Product code, tests, tickets, and git history are handled in their normal workflows. Corrections I make while resolving the queue steer the current session; they are not automatically logged as new rejections.
+
+\--
+
+The loop is: **reject during work → record once → resolve with an approved plan → verify the harness change → clear addressed entries**.
+
+## Set this up for yourself
+
+**Quick and easy, copy and paste this into codex/claude**
+
+```
+Analyze the document below and adapt these changes into my harness. We need
+a rejection feedback loop in Codex using the three skills on this page below:
+https://nickthewilder.com/blog/harness-rejection
+
+First inspect my available skills, tools, and note storage. Adapt the skill
+instructions to my environment; Herdr, qmd, and Obsidian are optional, so
+use them only if I already have them or choose to add them.
+
+Do not create a product ticket or change product code as part of rejection
+resolution workflow.
+```
+
+**Deeper explanation below**
+
+**These are tailored to my workflow.** Herdr, qmd, and Obsidian help me coordinate agents, search the log, and read notes, but none is required for the three-skill feedback loop.
+
+Use equivalent tools you already trust, and adapt the skill files below before copying them into another Codex setup.
+
+1. **Create three separate skills.** Put each `SKILL.md` below in its own skill directory, then adjust the paths, tool commands, and triggers to your environment.
+2. **Choose a durable log.** I keep `Agent Rejections` as a Markdown note in an [Obsidian](https://obsidian.md/help/install) vault, but not explicitly required, a normal Markdown file or another notes system works too. Give logging one writer and keep distinct objections in separate entries.
+3. **Choose how to queue intake.** I use a dedicated [Herdr](https://herdr.dev/tui/docs/) workspace so `rejection-add` can hand off logging while the active agent continues. Without Herdr, adapt that handoff to your agent runner or record the entry directly; keep the same distinction between queued and recorded.
+4. **Add search if useful.** I index the vault with [qmd](https://github.com/tobi/qmd/blob/main/README.md), search for the log, and run `qmd update` after edits. If you use qmd, add your notes directory as a collection. Otherwise use the search available in your notes system or filesystem.
+5. **Try one complete cycle.** Reject a small agent response, confirm one entry was recorded, then invoke `$rejection-resolve`. Review the proposed fix before approving changes to skills or the log.
+
+## Current skills:
+
+### rejection-add/SKILL.md
+
+```markdown
+---
+name: rejection-add
+description: Queue explicit user rejections of agent code, tests, plans, or responses to the agent in the rejection-log Herdr workspace. Use when the user asks to log a rejection or directly objects to or asks to redo agent work.
+---
+
+# Rejection Add
+
+When the user rejects agent work, briefly acknowledge queueing and continue the current task. Capture the rejected work, the user's feedback, and a useful context link when available. Distinguish separate objections, but do not send duplicate intake for a repeated or clarified objection. Do not log ordinary new requests or preferences that do not reject agent work.
+
+Read `herdr --skill` and live command help, then use `herdr pane current --current` to discover whether this session is Herdr-managed. Do not treat a missing `HERDR_ENV` variable as proof that it is not. If sandbox access blocks the CLI, retry with sandbox escalation before declaring Herdr unavailable. User confirmation that this is a Herdr session also rules out that declaration; report the exact CLI blocker if discovery still fails.
+
+In a Herdr-managed pane, use `herdr workspace list` to find the workspace labeled `rejection-log`. If absent, create it with `herdr workspace create --label rejection-log --cwd ~/dev --no-focus`. Read the returned workspace and pane IDs. Find the agent in that workspace through `herdr agent list`; if its root pane has no agent, start a Codex agent there with a unique name using `herdr agent start`. Do not send the intake to an agent in another workspace.
+
+Send the intake to that agent with `herdr agent prompt` without `--wait`. Explicitly instruct it to use `$rejection-log` (or read `~/.codex/skills/rejection-log/SKILL.md` if its session has not discovered the new skill), record only the rejection, leave its result in its pane, and report failures through `herdr notification show`. Once the prompt is accepted, leave logging to that agent; do not wait, poll, or read its output during the active task. Reuse the same workspace and agent for later entries so only one writer edits the note. Do not substitute a generic background agent. If live discovery confirms there is no managed pane and the user has not confirmed otherwise, say logging is pending until Herdr is available; do not edit the note locally.
+
+When `$rejection-add` is the user's whole request, queue the rejection and stop. Do not investigate, fix, or delegate the rejected work unless the user separately asks for that work.
+
+An accepted prompt means queued, not logged. Do not claim the rejection was logged until the Herdr agent confirms success; a later follow-up can check its result.
+```
+
+### rejection-log/SKILL.md
+
+````markdown
+---
+name: rejection-log
+description: Record rejection intake sent to the agent in the rejection-log Herdr workspace in the Agent Rejections vault note. Use for that workspace's logging task, not for routing or resolving rejections.
+---
+
+# Rejection Log
+
+Use this skill when the `rejection-log` Herdr workspace receives a rejection from `$rejection-add`. Handle vault logging only. Do not investigate, fix, or edit the rejected work. Do not delegate note writes to another agent; this workspace is the single writer.
+
+An intake should describe the rejected work, the user's objection, and any useful context link. If essential details are missing, report the gap in this pane and notify the sender instead of inventing them. Record distinct objections separately. If the intake repeats or clarifies an existing objection, update that entry only when the clarification adds useful facts; do not create a duplicate.
+
+Use `qmd search` to locate `Agent Rejections` in `~/dev/vault`. Do not use filesystem search commands to locate vault content. If the note does not exist, create `~/dev/vault/Agent Rejections.md` with this header and the current local date:
+
+```markdown
+---
+tags:
+  - work
+created date: YYYY-MM-DD
+last updated: YYYY-MM-DD
+---
+
+# Agent Rejections
+```
+
+Preserve existing entries. Append one entry per distinct rejection and update `last updated` to the current local date:
+
+```markdown
+## YYYY-MM-DD — Short description
+
+- **Categories:** Code quality, test quality, response
+- **Rejected work:** What the agent did or proposed.
+- **User feedback:** What the user objected to.
+- **Context:** Link to relevant work or conversation, if available.
+```
+
+Choose one or more applicable categories from `Code quality`, `Test quality`, and `Response`; do not add another category. Describe rejected work and feedback faithfully, without guessing at cause or resolution. Omit the context line when no useful link exists. Do not add ticket, status, cause, correction, or table of contents fields.
+
+Run `qmd update` after writing. Report success in this pane only after the note is written and indexed. If writing or indexing fails, report the exact failure here and use `herdr notification show` to alert the sender; do not claim the rejection was recorded.
+````
+
+### rejection-resolve/SKILL.md
+
+```markdown
+---
+name: rejection-resolve
+description: Use when the user asks to review agent rejections or turn them into Codex harness improvements. Plan with the user and wait for approval before editing Codex skills, scripts, related setup, or the rejection log; fresh rejections belong to rejection-add.
+---
+
+# Rejection Resolve
+
+Run this as a hands-on session with the user. The main agent owns the conversation, plan, approval, implementation review, and final report. Do not run the whole workflow in the background. Treat user corrections during this session as steering; do not add them to the rejection log.
+
+This workflow improves the Codex harness: skills, scripts, agent instructions, and related setup. Do not remediate product code, tests, tickets, or git history through rejection-resolve. Investigate a product failure only enough to identify a reusable harness change or report why none fits. A user may explicitly ask to remove a log entry without a harness fix.
+
+Use `qmd search` to locate `Agent Rejections` in `~/dev/vault`, then read the note. If it is absent or has no entries, report that and stop. Review the relevant entries and source work. When chat history is available as text, run [scripts/rejection_context.py](scripts/rejection_context.py) from this skill's directory with a log path or pipe the log to it. The script shows numbered context around `rejection-add` or `rejection-queue` mentions by either speaker; read further context where needed. If the user asks to work through the log, investigate every entry; group related fixes without treating unrelated failures as one problem.
+
+List every logged rejection in one sentence with its suggested fix and approval, then give a concrete plan for all entries in scope. Do not leave entries for a later session merely because they are unrelated; state exact external blockers when a fix cannot be completed now.
+
+Before editing anything, present a concrete plan to the user. Name the entries, explain the recurring failure, and recommend the smallest fitting response:
+
+- Update an existing skill when its guidance should change.
+- Create a new skill when repeated work needs agent judgment and has a distinct trigger.
+- Write a script when the repeated steps are deterministic and need no agent judgment.
+- Make no reusable artifact for a one-off mistake.
+
+The plan must identify files to change, intended behavior, checks, and which note entries will be removed. Wait for explicit user approval of that plan before changing files or the vault note. Do not create tickets.
+
+After approval, implement only the approved scope and run checks suited to the change. Routine bounded implementation may go to a lower-tier agent (`gpt-6-luna` when available), but the main agent stays in conversation and reviews actual changes and check evidence. Bring material changes to the plan back to the user before implementing them.
+
+Remove addressed entries from `Agent Rejections` only after the approved harness fix is implemented and verified, unless the user explicitly asks to delete an entry. Keep unresolved entries. Update the note's `last updated` property and run `qmd update` after editing it. Report what changed, what was checked, and what remains.
+```
+
+### Optional rejection-resolve helper
+
+Place this at `rejection-resolve/scripts/rejection_context.py` if you keep the chat-history context step in that skill.
+
+```python
+import argparse
+import sys
+
+
+def context_ranges(lines, before, after):
+    matches = [index for index, line in enumerate(lines) if any(name in line.casefold() for name in ("rejection-add", "rejection-queue"))]
+    ranges = []
+    for index in matches:
+        start = max(0, index - before)
+        end = min(len(lines), index + after + 1)
+        if ranges and start <= ranges[-1][1]:
+            ranges[-1] = (ranges[-1][0], max(ranges[-1][1], end))
+        else:
+            ranges.append((start, end))
+    return ranges
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Show chat context around rejection-add or rejection-queue mentions.")
+    parser.add_argument("chat_log", nargs="?", default="-", help="Chat log path, or - for stdin.")
+    parser.add_argument("--before", type=int, default=20, help="Lines before each mention.")
+    parser.add_argument("--after", type=int, default=20, help="Lines after each mention.")
+    args = parser.parse_args()
+
+    if args.before < 0 or args.after < 0:
+        parser.error("context line counts must be nonnegative")
+
+    if args.chat_log == "-":
+        lines = sys.stdin.read().splitlines()
+    else:
+        with open(args.chat_log, encoding="utf-8") as source:
+            lines = source.read().splitlines()
+
+    ranges = context_ranges(lines, args.before, args.after)
+    if not ranges:
+        print("no rejection-add or rejection-queue mentions found")
+        return
+
+    for start, end in ranges:
+        print(f"lines {start + 1}-{end}")
+        for index in range(start, end):
+            print(f"{index + 1:>5} {lines[index]}")
+        print()
+
+
+if __name__ == "__main__":
+    main()
+```
