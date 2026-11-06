@@ -184,8 +184,8 @@ pre {
     max-width: calc(100vw - 2rem);
 }
 
-/* Bare fences wrap prose; label code and diagrams to preserve their layout. */
-pre:has(> code:not([class*="language-"])) {
+/* Only markdown fences wrap; unlabeled and other languages preserve their layout. */
+pre:has(> code.language-markdown) {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }

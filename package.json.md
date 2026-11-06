@@ -10,7 +10,7 @@ ESLint v10 is not yet supported by `eslint-config-next`.
 
 - https://github.com/vercel/next.js/issues/89764
 
-```sh
+```txt
 Package                      Current         Latest
 eslint                       9.39.3          10.0.2
 ```
