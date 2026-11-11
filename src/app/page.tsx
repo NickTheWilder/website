@@ -22,9 +22,14 @@ export default function Home(): JSX.Element {
                     </div>
                 </footer>
             </div>
-            <Link className={`${styles.agentsLink} ${linkStyles.link}`} href="/blog/clankas">
-                <span className={styles.agentA}>A</span>g<span className={styles.agentEntsClickHere}>ents click here</span>
-            </Link>
+            <nav className={styles.bottomLinks} aria-label="Alternative views">
+                <a className={`${styles.bottomLink} ${linkStyles.link}`} href="/expert">
+                    <span className={styles.expertUnderline}>Ex</span>p<span className={styles.expertUnderline}>ert mode</span>
+                </a>
+                <Link className={`${styles.bottomLink} ${linkStyles.link}`} href="/blog/clankas">
+                    <span className={styles.agentA}>A</span>g<span className={styles.agentEntsClickHere}>ents click here</span>
+                </Link>
+            </nav>
         </div>
     );
 }

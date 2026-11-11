@@ -43,12 +43,21 @@
     font-weight: 700;
 }
 
-.agentsLink {
+.bottomLinks {
     position: fixed;
+    left: 30px;
     right: 30px;
     bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bottomLink {
     font-size: 16px;
     font-weight: 300;
+    margin-right: 0;
+    white-space: nowrap;
 }
 
 @media (max-width: 640px) {
@@ -60,20 +69,22 @@
         margin: auto auto 8px;
     }
 
-    .agentsLink {
+    .bottomLinks {
         position: static;
-        align-self: flex-end;
-        margin: 0 20px max(20px, env(safe-area-inset-bottom)) 0;
+        align-self: stretch;
+        margin: 0 20px max(20px, env(safe-area-inset-bottom));
     }
 }
 
 .agentA,
-.agentEntsClickHere {
+.agentEntsClickHere,
+.expertUnderline {
     position: relative;
 }
 
 .agentA::after,
-.agentEntsClickHere::after {
+.agentEntsClickHere::after,
+.expertUnderline::after {
     content: "";
     position: absolute;
     left: 0;
@@ -81,4 +92,17 @@
     width: 102%;
     height: 2px;
     background-color: #ff9f1c;
+}
+
+.expertUnderline::after {
+    background-color: #ff79c6;
+}
+
+.expertUnderline:first-child::after {
+    width: calc(102% - 1px);
+}
+
+.expertUnderline:last-child::after {
+    left: -4px;
+    width: calc(102% + 4px);
 }
