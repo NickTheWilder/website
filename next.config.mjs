@@ -1,4 +1,5 @@
 import createMDX from "@next/mdx";
+import { fileURLToPath } from "node:url";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -16,7 +17,7 @@ const nextConfig = {
 
 const withMDX = createMDX({
     options: {
-        remarkPlugins: ["remark-gfm", "remark-breaks"],
+        remarkPlugins: ["remark-gfm", fileURLToPath(new URL("./remark-alerts.mjs", import.meta.url)), "remark-breaks"],
         rehypePlugins: ["rehype-highlight"],
     },
 });

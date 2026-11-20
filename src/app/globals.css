@@ -163,6 +163,65 @@ h6 {
     font-style: italic;
 }
 
+.mdx-content .markdown-alert {
+    --alert-color: #58a6ff;
+    border-left: 4px solid var(--alert-color);
+    margin: 10px 0;
+    padding: 6px 16px;
+}
+
+.mdx-content .markdown-alert > p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.mdx-content .markdown-alert > p + p {
+    margin-top: 4px;
+}
+
+.mdx-content .markdown-alert-note {
+    --alert-icon: url("/icons/alert-note.svg");
+}
+
+.mdx-content .markdown-alert-tip {
+    --alert-color: #3fb950;
+    --alert-icon: url("/icons/alert-tip.svg");
+}
+
+.mdx-content .markdown-alert-important {
+    --alert-color: #a371f7;
+    --alert-icon: url("/icons/alert-important.svg");
+}
+
+.mdx-content .markdown-alert-warning {
+    --alert-color: #d29922;
+    --alert-icon: url("/icons/alert-warning.svg");
+}
+
+.mdx-content .markdown-alert-caution {
+    --alert-color: #f85149;
+    --alert-icon: url("/icons/alert-caution.svg");
+}
+
+.mdx-content .markdown-alert-title {
+    color: var(--alert-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mdx-content .markdown-alert-title::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: currentColor;
+    mask: var(--alert-icon) center / contain no-repeat;
+}
+
+.mdx-content .markdown-alert > :last-child {
+    margin-bottom: 0;
+}
+
 .mdx-content code {
     font-family: "Consolas", monospace;
     font-size: 0.9em;
