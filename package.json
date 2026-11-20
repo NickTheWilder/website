@@ -13,26 +13,26 @@
     "dependencies": {
         "@mdx-js/loader": "^3.1.1",
         "@mdx-js/react": "^3.1.1",
-        "@netlify/plugin-nextjs": "^5.15.13",
-        "@next/mdx": "16.3.4",
-        "next": "16.3.4",
-        "react": "19.3.0",
-        "react-dom": "19.3.0",
+        "@netlify/plugin-nextjs": "^5.16.8",
+        "@next/mdx": "16.4.6",
+        "next": "16.4.6",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
         "rehype-highlight": "^7.0.2",
         "remark-breaks": "^4.0.0",
         "remark-gfm": "^4.0.1"
     },
     "devDependencies": {
         "@eslint/compat": "^2.1.1",
-        "@next/eslint-plugin-next": "^16.3.4",
+        "@next/eslint-plugin-next": "^16.4.6",
         "@types/mdx": "^2.0.14",
-        "@types/node": "^26.5.1",
+        "@types/node": "^26.6.6",
         "@types/react": "19.3.0",
         "@types/react-dom": "19.3.0",
-        "@typescript-eslint/parser": "^8.70.0",
-        "eslint": "^10.10.0",
+        "@typescript-eslint/parser": "^8.73.0",
+        "eslint": "^10.15.0",
         "eslint-plugin-react-hooks": "^7.1.1",
-        "prettier": "^3.9.6",
+        "prettier": "3.10.1",
         "typescript": "^6.0.3"
     }
 }
